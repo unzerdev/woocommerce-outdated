@@ -1,0 +1,96 @@
+.unzercw-renewal {
+	margin-top: 5px;
+	margin-botton: 5px;
+}
+
+.unzercw-transaction-table .unzercw-details-row {
+	display: none;
+}
+
+.unzercw-transaction-table .unzercw-main-row .unzercw-more-details-button {
+	cursor: pointer;
+}
+
+.unzercw-transaction-table .unzercw-main-row.active .unzercw-more-details-button {
+	display: none;
+}
+
+.unzercw-transaction-table .unzercw-main-row.active td {
+	border-bottom-color: #f0f0f0;
+}
+
+.unzercw-transaction-table .unzercw-details-row.active {
+	display: table-row;
+}
+
+.unzercw-transaction-table label {
+	float: none;
+	font-weight: normal;
+}
+
+.unzercw-transaction-table .unzercw-main-row .unzercw-less-details-button {
+	display: none;
+	cursor: pointer;
+}
+
+.unzercw-transaction-table .unzercw-main-row.active .unzercw-less-details-button {
+	display: inline-block;
+}
+
+.unzercw-transaction-table .label-box {
+	float: left;
+	width: 380px;
+	margin-right: 75px;
+	padding: 3px;
+}
+
+.unzercw-transaction-table .label-box .label-title {
+	width: 50%;
+	font-weight: bold;
+	float: left;
+}
+
+.unzercw-transaction-table .label-box .label-value {
+	width: 50%;
+	float: right;
+}
+
+.unzercw-box-labels {
+	overflow: auto;
+	width: 100%;
+	margin-bottom: 2em;
+}
+
+.unzercw-transaction-table .box {
+	border-top: solid 1px #FFF;
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+	padding: 0.1em 0.8em 0.8em 0.8em;
+}
+
+.unzercw-transaction-table .box h4 {
+	margin: 0.6em 0;
+}
+
+.multi-control > .controls {
+	display: inline;
+}
+
+
+table th {
+	text-align: left;
+}
+
+table .left-align {
+	text-align: left;
+}
+
+table .right-align {
+	text-align: right;
+}
+
+.closable-box {
+	text-align: right;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}

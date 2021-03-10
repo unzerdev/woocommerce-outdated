@@ -1,0 +1,230 @@
+.unzercw-preview-fields{
+	margin-top: 5px;
+}
+
+.unzercw-control-group {
+	margin-bottom: 5px;
+}
+
+.unzercw-control-label {
+	display: inline-block;
+	padding-top: 6px;
+	padding-bottom: 3px;
+	width: 100%;
+	font-weight: bold;
+}
+
+.unzercw-help-block{
+	font-size: 14px;
+	padding-top: 3px;
+	padding-bottom: 6px;
+	font-size: 0.9em;
+	
+}
+
+.unzercw-control-label .unzercw-required {
+	color: #990000;
+	font-size: 0.8em;
+    padding-left: 2px;
+    vertical-align: top;
+}
+
+
+.unzercw-error {
+	margin-left: 140px;
+	color: #D8000C;
+}
+
+.unzercw-element-error input[type='text'],
+	.unzercw-element-error input[type='password'],
+	.unzercw-element-error select {
+	border-color: #D8000C;
+}
+
+.unzercw-card-cvc input[type='text'] {
+	max-width: 100px;
+}
+
+.unzercw-multi-control .unzercw-controls {
+	float:left;	
+}
+
+.unzercw-multi-control > div {
+	display: inline-block;
+	width: 100%;
+}
+
+.unzercw-text-field {
+	width: 80%;
+}
+
+.unzercw-iframe {
+	width: 100%;
+	border: none;
+}
+
+.unzercw-widget {
+	width: 100%;
+	border: none;
+}
+
+
+.unzercw-alias-hidden-new {
+	display: none;
+}
+
+.card-brand-image-box {
+	display: inline-block;
+}
+
+.card-brand-image-color.brand-is-deselected {
+	display: none;
+}
+
+.card-brand-image-grey.brand-is-selected {
+	display: none;
+}
+
+.entry-content .card-brand-image-selection img,
+	.card-brand-image-selection img {
+	width: auto;
+	height: 25px;
+	padding-right: 4px;
+	padding-bottom: 4px;
+	margin: 0 .5em 0 0;
+}
+
+.invalid-card-number, .invalid-card-number:focus, .invalid-cvc-number,
+	.invalid-cvc-number:focus, .invalid-issuer-number,
+	.invalid-issuer-number:focus {
+	border-color: #fb7f88;
+	background-image: url(../image/invalid.png);
+	background-position: 95% center;
+	background-repeat: no-repeat;
+}
+
+.valid-card-number, .valid-card-number:focus, .valid-cvc-number,
+	.valid-cvc-number:focus, .valid-issuer-number, .valid-issuer-number:focus
+	{
+	background-image: url(../image/valid.png);
+	background-position: 95% center;
+	background-repeat: no-repeat;
+}
+
+.unzercw-multi-control .unzercw-select-field select {
+	margin-right: 1em;
+}
+
+.unzercw-card-number .unzercw-multi-control select {
+	float: none;
+	margin-top: 0.2em;
+	margin-bottom: 0.2em;
+}
+
+.card-brand-image-selection {
+	margin-top: 0.5em;
+	cursor: pointer;
+}
+
+.unzercw-card-number .unzercw-html-field {
+	display: block;
+}
+
+.unzercw-back-to-checkout {
+	margin-top: 10px;
+	font-size: small;
+}
+
+.unzercw-requires-second-run {
+	display: none;
+}
+
+.unzercw .col2-set {
+	width: 100%;
+	margin-bottom: 24 px
+}
+
+.unzercw .col2-set:after, .woocommerce .col2-set:before
+	{
+	content: " ";
+	display: table;
+}
+
+.unzercw .col2-set :after {
+	clear: both;
+}
+
+.unzercw .col2-set .col-1 {
+	float: left;
+	width: 48%;
+}
+
+.unzercw .col2-set .col-2 {
+	float: right;
+	width: 48%;
+}
+
+.unzercw-external-checkout-line-items-table .head-name {
+	width: 60%;
+}
+
+.unzercw-external-checkout-line-items-table .head-quantity {
+	width: 10%;
+}
+
+.unzercw-external-checkout-line-items-table .head-total {
+	width: 30%;
+}
+
+.unzercw-external-checkout-line-items-table .product-quantity {
+	text-align: center;
+}
+
+.unzercw-external-checkout-additional {
+	width: 100%;
+	margin-bottom: 24px
+}
+
+.unzercw-external-checkout-terms {
+	width: 100%;
+	margin-bottom: 12px
+}
+
+.unzercw-external-checkout-confirm-buttons {
+	margin-bottom: 24px
+}
+
+.unzercw-external-checkout-account input.button {
+	margin-top: 12px
+}
+
+.cw-external-checkouts {
+	overflow: hidden;
+	margin-bottom: 12px;
+}
+
+.cw-external-checkouts .cw-external-checkout {
+	float: right;
+	margin-left: 10px;
+	margin-bottom: 1em;
+}
+
+.unzercw-external-checkout-customer-details {
+	margin-bottom: 24px;
+}
+
+.unzercw-external-checkout-billing {
+	margin-bottom: 24px;
+}
+
+.unzercw-external-checkout-shipping {
+	margin-bottom: 24px;
+}
+
+.unzercw-external-checkout-login-info-message {
+	margin-bottom: 24px;
+}
+
+.woocommerce-checkout #payment div.payment_box p:nth-last-of-type(1) {
+	margin-bottom: 0px;
+}

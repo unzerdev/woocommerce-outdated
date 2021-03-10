@@ -1,0 +1,34 @@
+.wpsc_checkout_table.checkout_forms .unzercw-control-label {
+	padding: 0;
+}
+
+#unzercw-confirmation-ajax-authorization-form {
+	font-size: 14px;
+}
+
+#unzercw-confirmation-ajax-authorization-form .control-label {
+	padding-top: 0 !important;
+}
+
+.unzer-placeholder {
+	min-width: 12em;
+}
+
+.page-checkout-confirmation #unzercw-confirmation-ajax-authorization-form .unzercw-confirmation-form .unzercw-control-label{
+	padding: 0 !important;
+}
+
+.unzercw-payment-form #visibleFormFields .unzercw-payment-form-visible .control-group .control-label {
+	vertical-align: initial !important;
+}
+
+.unzer-placeholder,
+.unzer-mandate,
+.heidelpayUI.form .field {
+	max-width: 400px;
+}
+
+.heidelpayUI.form .icon {
+	width: auto;
+	height: auto;
+}

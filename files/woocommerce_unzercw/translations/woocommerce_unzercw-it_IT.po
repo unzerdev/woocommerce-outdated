@@ -1,0 +1,1519 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+
+msgid "You have to enter the CVC code from your card."
+msgstr "Si prega di inserire il CVC della carta di credito."
+
+msgid "Shipping #%d"
+msgstr "Spedizione #%d"
+
+msgid "Status"
+msgstr "Stato"
+
+msgid "OrderId Schema"
+msgstr "OrderId Schema"
+
+msgid "Creating new charge failed: @message."
+msgstr "Creating new charge failed: @message."
+
+msgid "Enable %s"
+msgstr "Attiva %s"
+
+msgid "Captured Amount"
+msgstr "Importo riconosciuto"
+
+msgid "PaymentReference Schema"
+msgstr "PaymentReference Schema"
+
+msgid "Authorization Failed"
+msgstr "Autorizzazione non riuscita"
+
+msgid "The provided signature does not match with the one calculated."
+msgstr "La firma fornita non corrisponde a quella calcolata."
+
+msgid "Payment Notification"
+msgstr "Notifica di pagamento"
+
+msgid "Version"
+msgstr "Versione"
+
+msgid "MasterCard"
+msgstr "MasterCard"
+
+msgid "Should the amount be captured automatically after the order (direct) or should the amount only be reserved (deferred)?"
+msgstr "Qualora l'importo venga addebitato automaticamente dopo l'ordine (diretta) o solo bloccato (ritardato)?"
+
+msgid "You can specify the order status for orders that are captured either directly after the order or manually in the backend."
+msgstr "You can specify the order status for orders that are captured either directly after the order or manually in the backend."
+
+msgid "Dear customer, it appears to us that your payment was successful, but we are still waiting for confirmation. You can wait on this page and we will redirect you after we received the confirmation. Or you can close this window and we will send out an order confirmation email."
+msgstr "Gentile cliente, il suo pagamento sembra andato a buon fine, tuttavia siamo ancora in attesa di conferma. Può aspettare su questa pagina e la reindirizzeremo dopo che avremo ricevuto la conferma. Oppure può chiudere questa finestra e le invieremo una e-mail di conferma dell'ordine."
+
+msgid "The controller class '@controller' does not provide any method with annotation 'Customweb_Payment_Endpoint_Annotation_ExtractionMethod' and valid output."
+msgstr "La classe del controllore '@controller' non fornisce alcun metodo con annotazione 'Customweb_Payment_Endpoint_Annotation_ExtractionMethod'   e un valido output."
+
+msgid "Live Rang (PBX_RANG)"
+msgstr "Live Rang (PBX_RANG)"
+
+msgid "You can specify the order status for new orders that have an uncertain authorisation status."
+msgstr "You can specify the order status for new orders that have an uncertain authorisation status."
+
+msgid "Unzer Customer ID"
+msgstr "Unzer Customer ID"
+
+msgid "Authorization Method"
+msgstr "Metodo di autorizzazione"
+
+msgid "Please check the entered credit card number."
+msgstr "Si prega di controllare il numero di carta di credito inserito."
+
+msgid "Yes"
+msgstr "Si"
+
+msgid "Confirm email"
+msgstr "Conferma l'indirizzo email"
+
+msgid "Yes, use images for the brand selection."
+msgstr "Yes, use images for the brand selection."
+
+msgid "Payment"
+msgstr "Pagamento"
+
+msgid "The brand with key '!key' was not found in the card information map."
+msgstr "Il marchio con la chiave !key' non é stata trovata nella mappa dati della carta."
+
+msgid "Mandate"
+msgstr "Mandate"
+
+msgid "Shipping Option"
+msgstr "Opzioni di spedizione"
+
+msgid "Cancel ID"
+msgstr "Cancel ID"
+
+msgid "Break Out"
+msgstr "Break Out"
+
+msgid "@prepend: @error"
+msgstr "@prepend: @error"
+
+msgid "Here you can insert an order prefix. The prefix allows you to change the order number that is transmitted to Authorize.net. The prefix must contain the tag {id}. It will then be replaced by the order number (e.g. name_{id})."
+msgstr "Here you can insert an order prefix. The prefix allows you to change the order number that is transmitted to Authorize.net. The prefix must contain the tag {id}. It will then be replaced by the order number (e.g. name_{id})."
+
+msgid "Transaction Cancelled"
+msgstr "Transazione annullata"
+
+msgid "Enter the public and private key received from Unzer."
+msgstr "Enter the public and private key received from Unzer."
+
+msgid "If the status is 'Pending' it is unclear whether the transaction will be cancelled successfully."
+msgstr "Se lo stato é 'in sospeso' non é chiaro se la transazione verrà annullata correttamente."
+
+msgid "Payment Information"
+msgstr "Informazioni sul pagamento"
+
+msgid "The authorization method '!method' is not supported."
+msgstr "Il metodo autorizzazione '!method' non é supportato."
+
+msgid "Other Discount"
+msgstr "Altro sconto"
+
+msgid "SEPA Mandate ID"
+msgstr "SEPA Mandate ID"
+
+msgid "No, use the dropdown."
+msgstr "No, use the dropdown."
+
+msgid "Capture Amount"
+msgstr "Capture Amount"
+
+msgid "The capture item with SKU '@sku' is not present in the original order."
+msgstr "Il prodotto registrato con SKU '@sku' non é presente nell'ordine originale."
+
+msgid "no"
+msgstr "no"
+
+msgid "Please enter here the bank code of your bank."
+msgstr "Si prega di inserire il codice banca ."
+
+msgid "Maximal Refundable Amount"
+msgstr "Importo massimo rimborsabile"
+
+msgid "Define a maximal order total for this checkout to be available."
+msgstr "Definire un ordine totale massimo al fine che questo checkout sia disponibile."
+
+msgid "<p>By signing this mandate form, you authorise @merchantName to send instructions to your bank to debit your account and your bank to debit your account in accordance with the instructions from @merchantName.</p><p>Note: As part of your rights, you are entitled to a refund from your bank under the terms and conditions of your agreement with your bank. A refund must be claimed within 8 weeks starting from the date on which your account was debited. Your rights regarding this SEPA mandate are explained in a statement that you can obtain from your bank.</p><p>In case of refusal or rejection of direct debit payment I instruct my bank irrevocably to inform @merchantName or any third party upon request about my name, address and date of birth.</p>"
+msgstr "<p>By signing this mandate form, you authorise @merchantName to send instructions to your bank to debit your account and your bank to debit your account in accordance with the instructions from @merchantName.</p><p>Note: As part of your rights, you are entitled to a refund from your bank under the terms and conditions of your agreement with your bank. A refund must be claimed within 8 weeks starting from the date on which your account was debited. Your rights regarding this SEPA mandate are explained in a statement that you can obtain from your bank.</p><p>In case of refusal or rejection of direct debit payment I instruct my bank irrevocably to inform @merchantName or any third party upon request about my name, address and date of birth.</p>"
+
+msgid "customweb ltd"
+msgstr "customweb SRL"
+
+msgid "Please select the the year of your birth."
+msgstr "Si prega di selezionare l'anno di nascita."
+
+msgid "Merchant name"
+msgstr "Merchant name"
+
+msgid "Refund amount"
+msgstr "Importo rimborsato"
+
+msgid "Bank Location"
+msgstr "Posizione della banca"
+
+msgid "CVC"
+msgstr "CVC"
+
+msgid "The capture will automatically close the transaction for further captures."
+msgstr "La registrazione chiude automaticamente la transazione per ulteriori aggiornamenti."
+
+msgid "Unzer Remaining Amount"
+msgstr "Unzer Remaining Amount"
+
+msgid "By setting the capturing the reservation can be captured directly after the order or later manually over the backend of the store."
+msgstr "By setting the capturing the reservation can be captured directly after the order or later manually over the backend of the store."
+
+msgid "Amount to capture"
+msgstr "Importo da contabillizzare"
+
+msgid "Which status should be set if a problem with the authorisation has occurred? In these cases you must manually verify if the customer has been charged with the amount."
+msgstr "Quale status dell'ordine deve essere impostato quando si verifica un problema in sede di autorizzazione? Se non si desidera modificare lo stato, selezionare l'opzione 'non cambiare lo status dell'ordine'."
+
+msgid "No transaction ID provided."
+msgstr "ID transazione non fornito."
+
+msgid "Unzer Short ID"
+msgstr "Unzer Short ID"
+
+msgid "Please enter here the CVC code from your card. You find the code on the back of the card."
+msgstr "Inserisci qui il codice CVC che si trova sul retro della tua carta."
+
+msgid "Shipping"
+msgstr "Spedizione"
+
+msgid "Quantity"
+msgstr "Quantità"
+
+msgid "Capture ID"
+msgstr "Capture ID"
+
+msgid "Salutation"
+msgstr "Salutation"
+
+msgid "Deactivate"
+msgstr "Deactivate"
+
+msgid "Transaction was captured in Unzer, but cannot be captured in store."
+msgstr "Transaction was captured in Unzer, but cannot be captured in store."
+
+msgid "Unzer Transactions"
+msgstr "Unzer transazioni"
+
+msgid "Live"
+msgstr "Live"
+
+msgid "Which status should be set when a transaction is labelled as paid? For payments by invoice a payment the labelling might occur with a delay; in this case this status helps keep apart paid from unpaid invoices."
+msgstr "Quale status dell'ordine deve essere impostato quando il pagamento viene inviato al cliente? Quando si effettua un ordine con una fattura, l'indicazione dello status può apparire con un ritardo; in questo caso lo status può aiutare a distinguere le fatture non pagate da quelle pagate."
+
+msgid "The layout does not contain the tag '!layout_tag'."
+msgstr "Il layout non contiene il tag '!layout_tag'."
+
+msgid "Cancelling @amount for charge with id @id."
+msgstr "Cancelling @amount for charge with id @id."
+
+msgid "Unzer Total Amount"
+msgstr "Unzer Total Amount"
+
+msgid "A chargeback with id @id has been received for @amount. Please review this transaction manually."
+msgstr "A chargeback with id @id has been received for @amount. Please review this transaction manually."
+
+msgid "Description"
+msgstr "Descrizione"
+
+msgid "Payment ID"
+msgstr "Payment ID"
+
+msgid "Submitting order information..."
+msgstr "Invio informazioni sull'ordine ..."
+
+msgid "Operation Mode"
+msgstr "Operation Mode"
+
+msgid "Please check your inputs to ensure all company required fields are present."
+msgstr "Please check your inputs to ensure all company required fields are present."
+
+msgid "Title"
+msgstr "Titolo"
+
+msgid "Password"
+msgstr "Password"
+
+msgid "Error Message:"
+msgstr "Notifica di errore:"
+
+msgid "3D Secure"
+msgstr "3D Secure"
+
+msgid "You have to enter the location of your bank."
+msgstr "Si prega di inserire la posizione della banca."
+
+msgid "Success"
+msgstr "Successo"
+
+msgid "Capture Transaction"
+msgstr "Registrare la transazione"
+
+msgid "The card brand selection is automatically done depending on the entered card number. If no Javascript is active in the browser, a drop down is shown. In case JavaScript a the brand logos can be shown. Should the brand selection using images?"
+msgstr "The card brand selection is automatically done depending on the entered card number. If no Javascript is active in the browser, a drop down is shown. In case JavaScript a the brand logos can be shown. Should the brand selection using images?"
+
+msgid "The HMAC key as defined in the live backoffice of Unzer. You may need generate the HMAC key. Please take a look at the manual how to do this."
+msgstr "The HMAC key as defined in the live backoffice of Unzer. You may need generate the HMAC key. Please take a look at the manual how to do this."
+
+msgid "A cancelled transaction cannot be cancelled again."
+msgstr "Una transazione cancellata non può essere cancellata nuovamente."
+
+msgid "You can choose a previous used card:"
+msgstr "E' possibile scegliere una carta utilizzata precedentemente:"
+
+msgid "Invalid transaction ID provided."
+msgstr "ID transazione invalido."
+
+msgid "Could not load layout from URL !url. Reason: !reason"
+msgstr "Impossibile caricare il layout dall' URL !url. motivo: !reason"
+
+msgid "Maximal Capturable Amount"
+msgstr "Importo massimo di contabilizzabile"
+
+msgid "Subscriptions: Add Manual Renewal"
+msgstr "Abbonamenti: Aggiungi rinnovo manuale"
+
+msgid "Unzer Canceled Amount"
+msgstr "Unzer Canceled Amount"
+
+msgid "Please enter here the sales tax number of your company."
+msgstr "Inserisci qui la partita IVA della tua azienda."
+
+msgid "Define a minimal order total for this checkout to be available."
+msgstr "Definire un ordine totale minimo al fine che questo checkout sia disponibile."
+
+msgid "Transaction was cancelled or refunded, but status change cannot be reflected in store."
+msgstr "Transaction was cancelled or refunded, but status change cannot be reflected in store."
+
+msgid "Please enter the name of your bank."
+msgstr "Si prega di inserire il nome della banca."
+
+msgid "Refunds"
+msgstr "Crediti"
+
+msgid "The total refund amount (!totalRefundedAmount) cannot be greater than the captured amount (!capturedAmount)."
+msgstr "L'importo totale rimborsato (!totalRefundedAmount) non può essere superiore all'importo acquisito (!capturedAmount)."
+
+msgid "Transaction Updates"
+msgstr "Transaction Updates"
+
+msgid "The customer is now in the payment process of Unzer."
+msgstr "Il cliente é ora nel processo di pagamento di Unzer."
+
+msgid "Live HMAC Key"
+msgstr "Live HMAC Key"
+
+msgid "Only authorized transaction can be captured."
+msgstr "Solo le transazioni autorizzate possono essere registrate."
+
+msgid "The transaction is pending."
+msgstr "The transaction is pending."
+
+msgid "Pay with %s over the interface of Unzer."
+msgstr "Paga con % con l'interfaccia di Unzer."
+
+msgid "Please select a shipping method"
+msgstr "Si prega di selezionare un metodo di spedizione"
+
+msgid "Alias"
+msgstr "Alias"
+
+msgid "The expected format is '!format' where the 'MM' means the month number and 'YY' the year number."
+msgstr "Il formato previsto é '!format' dove per 'MM' si intende il numero del mese e 'YY' il numero dell'anno."
+
+msgid "Order Prefix"
+msgstr "Order Prefix"
+
+msgid "yes"
+msgstr "yes"
+
+msgid "Maximal Order Total"
+msgstr "Totale massimo dell'ordine"
+
+msgid "The site id (PBX_RANG) as defined in the backoffice of Unzer."
+msgstr "The site id (PBX_RANG) as defined in the backoffice of Unzer."
+
+msgid "Captured Status"
+msgstr "Status registrato"
+
+msgid "Issue Number"
+msgstr "Numero Issue"
+
+msgid "Here you can set a schema for the paymentReference parameter transmitted to identify the payment. If left empty it is not transmitted. The following placeholders can be used: {oid} for the order id, which may not be unique or set; {tid} for the sellxed transaction id which is a unique number, or {id} which contains the order id and is guaranteed to be unique."
+msgstr "Here you can set a schema for the paymentReference parameter transmitted to identify the payment. If left empty it is not transmitted. The following placeholders can be used: {oid} for the order id, which may not be unique or set; {tid} for the sellxed transaction id which is a unique number, or {id} which contains the order id and is guaranteed to be unique."
+
+msgid "Private Key (Live)"
+msgstr "Private Key (Live)"
+
+msgid "Please enter here the Bank Identifier Code (BIC)."
+msgstr "Inserisci qui il codice di identificazione bancario (BIC)."
+
+msgid "Minimal Order Total"
+msgstr "Minimo per il totale dell'ordine"
+
+msgid "A refund was added over !amount."
+msgstr "Un rimborso é stato aggiunto a !amount."
+
+msgid "Order #"
+msgstr "Numero d'ordine"
+
+msgid "The capture amount (!captureAmount) cannot be greater than the authorized amount (!authorizedAmount)."
+msgstr "La quantità da registrare (!captureAmount) non può essere superiore all'importo autorizzato (!authorizedAmount)."
+
+msgid "Direct Charge"
+msgstr "Direct Charge"
+
+msgid "Please enter the location of your bank."
+msgstr "Si prega di inserire la posizione della banca."
+
+msgid "You have to enter your social security number."
+msgstr "Si prega di inserire il numero di sicurezza sociale."
+
+msgid "Transaction Number"
+msgstr "Numero di transazione"
+
+msgid "Place Order"
+msgstr "Fare un ordine"
+
+msgid "You have to enter sales tax number of your company."
+msgstr "È necessario inserire il numero di imposta sulle vendite della tua azienda."
+
+msgid "Cart has been modified after displaying order review"
+msgstr "Il carrello è stato modificato dopo aver visualizzato il riepilogo dell'ordine"
+
+msgid "Processing metadata failed"
+msgstr "Processing metadata failed"
+
+msgid "The signature could not be verified."
+msgstr "The signature could not be verified."
+
+msgid "This is a brief installation instruction of the main and most important installation steps. It is important that you strictly follow the check-list. Only by doing so, the secure usage in correspondence with all security regulations can be guaranteed."
+msgstr "This is a brief installation instruction of the main and most important installation steps. It is important that you strictly follow the check-list. Only by doing so, the secure usage in correspondence with all security regulations can be guaranteed."
+
+msgid "Invalid Email/Username"
+msgstr "Email / Username invalido"
+
+msgid "Request was succesfull, but no recurring alias could be created."
+msgstr "Request was succesfull, but no recurring alias could be created."
+
+msgid "The payment method !paymentMethodName does not support the currency '!currency'."
+msgstr "ll metodo di pagamento !paymentMethodName non supporta la moneta '!currency'."
+
+msgid "Short Installation Instructions:"
+msgstr "Short Installation Instructions:"
+
+msgid "Company Commercial Number"
+msgstr "Numero commerciale dell'azienda"
+
+msgid "Captured amount (@captured) does not equal charged amount (@charged). Please check in your Unzer backend."
+msgstr "Captured amount (@captured) does not equal charged amount (@charged). Please check in your Unzer backend."
+
+msgid "The amount of !amount is authorized."
+msgstr "La quantità di !amount é autorizzata."
+
+msgid "Continue"
+msgstr "Continua"
+
+msgid "You have to enter the name of the account owner."
+msgstr "Si prega di inserire il nome del titolare del conto."
+
+msgid "Uncertain Status"
+msgstr "Status incerto"
+
+msgid "A cancelled transaction cannot be authorized."
+msgstr "Una transazione annullata non può essere autorizzata."
+
+msgid "Inactive"
+msgstr "Inactive"
+
+msgid "You have to activate JavaScript in your browser to complete the payment."
+msgstr "Devi attivare JavaScript nel tuo browser per completare il pagamento."
+
+msgid "During the authorization"
+msgstr "Durante l'autorizzazione"
+
+msgid "Value for '@name' must be set."
+msgstr "Value for '@name' must be set."
+
+msgid "The given card number has an invalid length."
+msgstr "Il numero della carta fornito ha una lunghezza non valida."
+
+msgid "Private Key (Test)"
+msgstr "Private Key (Test)"
+
+msgid "A captured transaction cannot be authorized."
+msgstr "Una transazione registrata non può essere autorizzata."
+
+msgid "A cancelled transaction cannot be refunded."
+msgstr "Una transazione cancellata non può essere rimborsata."
+
+msgid "The given password is empty."
+msgstr "The given password is empty."
+
+msgid "The value for '@label' must be set in the configuration."
+msgstr "The value for '@label' must be set in the configuration."
+
+msgid "Transaction is in state partial capture."
+msgstr "Transaction is in state partial capture."
+
+msgid "Card Expiration"
+msgstr "Carta di data di scadenza"
+
+msgid "Image Brand Selection"
+msgstr "Image Brand Selection"
+
+msgid "If the status is 'Pending' it is unclear whether the transaction will be refunded successfully."
+msgstr "Se lo stato é 'In sospeso' non é chiaro se la transazione sarà rimborsata con successo."
+
+msgid "Wide (label from Unzer)"
+msgstr "Wide (label from Unzer)"
+
+msgid "An unknown error occurred."
+msgstr "An unknown error occurred."
+
+msgid "Public Key (Live)"
+msgstr "Public Key (Live)"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Refund ID"
+msgstr "ID rimborso"
+
+msgid "JCB"
+msgstr "JCB"
+
+msgid "Multiple Shipping Methods"
+msgstr "Molteplici metodi di spedizione"
+
+msgid "Create account"
+msgstr "Crea un account"
+
+msgid "Costs"
+msgstr "Costi"
+
+msgid "Enter your preferred salutation."
+msgstr "Enter your preferred salutation."
+
+msgid "Redirection"
+msgstr "Instradamento"
+
+msgid "Billing Address"
+msgstr "indirizzo di fatturazione"
+
+msgid "The refunding could not be conducted. Error code: !error."
+msgstr "The refunding could not be conducted. Error code: !error."
+
+msgid "The SEPA mandate schema does not contain the tag '!tag'. This tag is required."
+msgstr "Lo schema mandato SEPA non contiene il tag '!tag' necessario."
+
+msgid "Only authorized transaction can be cancelled."
+msgstr "Solo le transazioni autorizzate possono essere cancellate."
+
+msgid "The amount could not be verified."
+msgstr "The amount could not be verified."
+
+msgid "Card Brand"
+msgstr "Card Brand"
+
+msgid "Setup"
+msgstr "Setup"
+
+msgid "Operation mode of the shop."
+msgstr "Operation mode of the shop."
+
+msgid "No more details available."
+msgstr "Nessun altro dettaglio disponibile."
+
+msgid "Set here the minimal order total for which this payment method is available. If it is set to zero, it is always available."
+msgstr "Il metodo di pagamento é disponibile solo quando il totale dell'ordine é inferiore all'importo specificato qui. Se é impostato su zero, questo metodo di pagamento é sempre disponibile."
+
+msgid "Only an authorized transaction can be marked as finally declined."
+msgstr "Solo una transazione autorizzata può essere contrassegnata come Rifiutata."
+
+msgid "Processed partial cancel on authorize for amount @amount with id @id."
+msgstr "Processed partial cancel on authorize for amount @amount with id @id."
+
+msgid "Directly after order (sale)"
+msgstr "Directly after order (sale)"
+
+msgid "Please enter here the account holder name."
+msgstr "Si prega di inserire qui il nome del titolare del conto."
+
+msgid "Amount"
+msgstr "Importo"
+
+msgid "The brand of the credit card is detected by the card number if hidden authorization is used. If the payment page is used, the user has to select the brand. The allowed credit card brands can be restricted by this setting."
+msgstr "The brand of the credit card is detected by the card number if hidden authorization is used. If the payment page is used, the user has to select the brand. The allowed credit card brands can be restricted by this setting."
+
+msgid "The cancellation could not be conducted. Error code: !error."
+msgstr "The cancellation could not be conducted. Error code: !error."
+
+msgid "Charge @id for @amount received and processed."
+msgstr "Charge @id for @amount received and processed."
+
+msgid "This status is set, when the payment was successfull and it is authorized."
+msgstr "This status is set, when the payment was successfull and it is authorized."
+
+msgid "Subscription Payment Failed with error:"
+msgstr "Pagamento per l'abbonamento non riuscito con errore:"
+
+msgid "No authorization method found for payment method !method."
+msgstr "Nessun metodo di autorizzazione trovato per il pagamento !method."
+
+msgid "Public Key for test requests, provided by Unzer."
+msgstr "Public Key for test requests, provided by Unzer."
+
+msgid "Charge ID"
+msgstr "Charge ID"
+
+msgid "Private Key for test requests, provided by Unzer."
+msgstr "Private Key for test requests, provided by Unzer."
+
+msgid "The given hmac key is empty."
+msgstr "The given hmac key is empty."
+
+msgid "The whole transaction is cancelled."
+msgstr "L'intera transazione é stata annullata."
+
+msgid "Please select the Bank Identifier Code (BIC) of your bank."
+msgstr "Seleziona il Bank Identifier Code (BIC) della  banca."
+
+msgid "Subtotal"
+msgstr "Totale parziale"
+
+msgid "I confirm my payment"
+msgstr "Confermo il mio pagamento"
+
+msgid "American Express"
+msgstr "American Express"
+
+msgid "The transaction was cancelled."
+msgstr "The transaction was cancelled."
+
+msgid "Commercial Register Number"
+msgstr "Commercial Register Number"
+
+msgid "Previous Actions"
+msgstr "Azioni precedenti"
+
+msgid "Capturing"
+msgstr "Contabilizzare"
+
+msgid "Discount"
+msgstr "Sconto"
+
+msgid "Send Basket"
+msgstr "Send Basket"
+
+msgid "Enable/Disable"
+msgstr "Attiva / disattiva"
+
+msgid "Only an uncertain transaction can be marked as finally declined."
+msgstr "Solo una transazione incerta può essere contrassegnata  Rifiutata."
+
+msgid "Login / Register"
+msgstr "Login / Registrati"
+
+msgid "The next update execution date indicates when the next cron is run to update the transaction state."
+msgstr "La data del prossimo aggiornamento indica quando il prossimo cron é lanciato per aggiornare lo stato della transazione."
+
+msgid "Action"
+msgstr "Azione"
+
+msgid "Unzer Settings"
+msgstr "Impostazioni Unzer"
+
+msgid "Missing Permissions."
+msgstr "Autorizzazioni mancanti."
+
+msgid "The transaction failed with error code !code."
+msgstr "The transaction failed with error code !code."
+
+msgid "Please enter here the name of the account owner."
+msgstr "Si prega di inserire il nome del titolare del conto."
+
+msgid "The refund item with SKU '@sku' has a higher amount (@amountItem) as the original item (@amountOriginal)."
+msgstr "Il prodotto rimborsato con SKU '@sku' ha una quantità (@amountItem) superiore rispetto al prodotto originale (@amountOriginal)."
+
+msgid "Create a recurring payment, with an existing alias is not supported"
+msgstr "Create a recurring payment, with an existing alias is not supported"
+
+msgid "An unkown exception occurred: @message."
+msgstr "An unkown exception occurred: @message."
+
+msgid "Live Identifier (PBX_IDENTIFIANT)"
+msgstr "Live Identifier (PBX_IDENTIFIANT)"
+
+msgid "Refund could not be completely processed, rest amount open: @amount"
+msgstr "Refund could not be completely processed, rest amount open: @amount"
+
+msgid "Figure !number:"
+msgstr "Figure !number:"
+
+msgid "Could not find a brand for the given card number."
+msgstr "Impossibile trovare un marchio in base al numero di carta fornito."
+
+msgid "Select the authorization method to use for processing this payment method."
+msgstr "Seleziona il metodo di autorizzazione da utilizzare per l'elaborazione di questo metodo di pagamento."
+
+msgid "Shipping &amp; Handling"
+msgstr "Shipping &amp; Handling"
+
+msgid "You have to enter commercial number of you company."
+msgstr "Si prega di inserire il numero di iscrizione nel registro delle imprese."
+
+msgid "Please select the day of your birth."
+msgstr "Si prega di selezionare il giorno della tua nascita."
+
+msgid "You can not submit both forms at once"
+msgstr "Non è possibile inviare entrambi i formulari in una sola volta"
+
+msgid "Unzer Type ID"
+msgstr "Unzer Type ID"
+
+msgid "The refund item with SKU '@sku' is not present in the original order."
+msgstr "Il prodotto rimborsato con SKU '@sku' non é presente nell'ordine originale."
+
+msgid "Bank account number"
+msgstr "Numero IBAN"
+
+msgid "Wrong authorization type."
+msgstr "Tipo di autorizzazione sbagliato."
+
+msgid "Please pay the amount of !amount using the following bank data:<br/><b>Descriptor:</b> !descriptor<br/><b>Account Holder:</b> !holder<br/><b>IBAN:</b> !iban<br/><b>BIC:</b> !bic<br/>"
+msgstr "Please pay the amount of !amount using the following bank data:<br/><b>Descriptor:</b> !descriptor<br/><b>Account Holder:</b> !holder<br/><b>IBAN:</b> !iban<br/><b>BIC:</b> !bic<br/>"
+
+msgid "This transaction is already closed for further refunds."
+msgstr "Questa transazione é stata chiusa e non sono più possibili rimborsi."
+
+msgid "Customer sucessfully returned from the UnzerCw payment page."
+msgstr "Customer sucessfully returned from the UnzerCw payment page."
+
+msgid "You have to enter the name of your bank."
+msgstr "Si prega di indicare il nome della banca."
+
+msgid "Continue to your the order confirmation"
+msgstr "Continua per confermare l'ordine"
+
+msgid "Processing type failed"
+msgstr "Processing type failed"
+
+msgid "Applied Interest Rate"
+msgstr "Applied Interest Rate"
+
+msgid "Do not send"
+msgstr "Do not send"
+
+msgid "Bank Name"
+msgstr "Nome della banca"
+
+msgid "Commercial Sector"
+msgstr "Commercial Sector"
+
+msgid "Unzer Authorization ID"
+msgstr "Unzer Authorization ID"
+
+msgid "3D Secure Authentication"
+msgstr "3D Secure Authentication"
+
+msgid "Not a valid shipping method"
+msgstr "Non è un metodo di spedizione valido"
+
+msgid "The rang (PBX_RANG) as defined in the live backoffice of Unzer. It must be nummeric value with length two. In the backoffice it may be displayed as a three char value. You must truncate the first digit."
+msgstr "The rang (PBX_RANG) as defined in the live backoffice of Unzer. It must be nummeric value with length two. In the backoffice it may be displayed as a three char value. You must truncate the first digit."
+
+msgid "Social Security Number"
+msgstr "Social Security Number"
+
+msgid "Please enter here the account holder name on the card."
+msgstr "Si prega di inserire qui il nome del titolare del conto sulla carta."
+
+msgid "Add manual renewal"
+msgstr "Aggiungi rinnovo manualmente"
+
+msgid "This controls the description which the user sees during checkout."
+msgstr "Questa opzione controlla la descrizione che l'utente vede durante il checkout."
+
+msgid "3D Secure sucess"
+msgstr "La verifica 3D Secure é andata a buon fine"
+
+msgid "Test"
+msgstr "Test"
+
+msgid "Credit Card Brands"
+msgstr "Credit Card Brands"
+
+msgid "Product"
+msgstr "Prodotto"
+
+msgid "Please enter here the account number of your bank account."
+msgstr "Si prega di inserire l'IBAN (numero di conto bancario internazionale)."
+
+msgid "Please enter here the commercial number of your company."
+msgstr "Si prega di inserire il numero di iscrizione nel registro delle imprese."
+
+msgid "Shipping Method"
+msgstr "Metodo di spedizione"
+
+msgid "Time Out"
+msgstr "Time Out"
+
+msgid "Live Password"
+msgstr "Live Password"
+
+msgid "A authorized transaction cannot be authorized again."
+msgstr "Una transazione autorizzata non può essere autorizzata di nuovo."
+
+msgid "Live Mode"
+msgstr "Live Mode"
+
+msgid "Processing shipment failed"
+msgstr "Processing shipment failed"
+
+msgid "The identifier as defined in the backoffice of Unzer."
+msgstr "The identifier as defined in the backoffice of Unzer."
+
+msgid "The given site number is empty."
+msgstr "The given site number is empty."
+
+msgid "Code: '@code'"
+msgstr "Code: '@code'"
+
+msgid "Please select the expiry month on your card."
+msgstr "Devi inserire il mese della scadenza della carta."
+
+msgid "Next Update Execution Date"
+msgstr "Data del prossimo aggiornamento"
+
+msgid "Failed"
+msgstr "Non andato a buon fine"
+
+msgid "The transaction failed for an unknown reason."
+msgstr "The transaction failed for an unknown reason."
+
+msgid "After selection of payment method"
+msgstr "Dopo la scelta del pagamento"
+
+msgid "The password field was empty"
+msgstr "Il campo password é vuoto"
+
+msgid "The customer does not finish the payment with in the timeout."
+msgstr "Il cliente non completa il pagamento entro il tempo stabilito."
+
+msgid "If the test mode is selected the test account is used. Otherwise the configured account is used."
+msgstr "If the test mode is selected the test account is used. Otherwise the configured account is used."
+
+msgid "The email address field was empty"
+msgstr "Il campo di indirizzo di posta elettronica é vuoto"
+
+msgid "Activate the payment methods you would like to offer."
+msgstr "Activate the payment methods you would like to offer."
+
+msgid "Public Key"
+msgstr "Public Key"
+
+msgid "Mr"
+msgstr "Mr"
+
+msgid "This controls the title which the user sees during checkout."
+msgstr "Questo controlla il titolo che l'utente vede durante il checkout."
+
+msgid "Transaction should be manually reviewed."
+msgstr "Transaction should be manually reviewed."
+
+msgid "The order is not fully completed. Please contact the store owner."
+msgstr "Il pagamento non ha potuto andare a buon fine."
+
+msgid "Mrs"
+msgstr "Mrs"
+
+msgid "You have to enter sales tax number of you company."
+msgstr "SI prega di inserire il numero di partita IVA."
+
+msgid "More Details"
+msgstr "Maggiori dettagli"
+
+msgid "When the store is not available (network outage, server failure or any other outage), when the feedback of Unzer is sent, then the transaction state is not updated. Hence no order confirmation e-mail is sent and the order is not in the paid state. By activating the transaction update, such transactions can be authorized later over direct link. To use this feature the update service must be activated and the API username and the API password must be set."
+msgstr "When the store is not available (network outage, server failure or any other outage), when the feedback of Unzer is sent, then the transaction state is not updated. Hence no order confirmation e-mail is sent and the order is not in the paid state. By activating the transaction update, such transactions can be authorized later over direct link. To use this feature the update service must be activated and the API username and the API password must be set."
+
+msgid "Please select the month of your birth."
+msgstr "Seleziona il mese di nascita."
+
+msgid "Direct E-Banking"
+msgstr "Direct E-Banking"
+
+msgid "How should elements from Unzer be loaded? With narrow elements the element label is displayed by the store, with wide elements it is loaded via javascript by Unzer. The input elements are always loaded from Unzer."
+msgstr "How should elements from Unzer be loaded? With narrow elements the element label is displayed by the store, with wide elements it is loaded via javascript by Unzer. The input elements are always loaded from Unzer."
+
+msgid "Set the sort order to show the external checkouts."
+msgstr "Impostare il criterio di ordine per visualizzare i checkout esterni."
+
+msgid "Card Number"
+msgstr "Numero di carta"
+
+msgid "Brand Name"
+msgstr "Brand Name"
+
+msgid "Total amount computed over all lineitems (%f) does not match cart total (%f)"
+msgstr "L'importo totale contabilizzato su tutti gli elementi della linea (% f) non corrisponde alla spesa totale (% f)"
+
+msgid "The capturing could not be conducted. Error code: !error."
+msgstr "The capturing could not be conducted. Error code: !error."
+
+msgid "Should the invoice items be transmitted to Unzer? This slightly increases the processing time due to an additional request, and may cause issues for certain quantity / price combinations."
+msgstr "Should the invoice items be transmitted to Unzer? This slightly increases the processing time due to an additional request, and may cause issues for certain quantity / price combinations."
+
+msgid "Unzer Charge ID"
+msgstr "Unzer Charge ID"
+
+msgid "Captures"
+msgstr "Acquisizione"
+
+msgid "Unzer Payment ID"
+msgstr "Unzer Payment ID"
+
+msgid "Private Key"
+msgstr "Private Key"
+
+msgid "Dear customer we have received your billing and shipping information. In order to finish your order please create an account below or checkout as guest."
+msgstr "Gentile cliente abbiamo ricevuto le sue informazioni  di  fatturazione e  spedizione. Per concludere il tuo ordine,  vai alla cassa, crea un nuovo accesso o effettua il checkout come ospite."
+
+msgid "Deferred"
+msgstr "Ritardato"
+
+msgid "Which status should be set if the payment has been successfully authorised?"
+msgstr "Quale condizione deve essere impostata quando il pagamento é stata autorizzata con successo?"
+
+msgid "Processing..."
+msgstr "Elaborazione in corso ..."
+
+msgid "Change payment method"
+msgstr "Cambiare il metodo di pagamento"
+
+msgid "Paid Status"
+msgstr "Status pagato"
+
+msgid "Direct Debits"
+msgstr "Direct Debits"
+
+msgid "Order Review"
+msgstr "Controllo ordine"
+
+msgid "Reset"
+msgstr "Reset"
+
+msgid "If the status is 'Pending' it is unclear whether the transaction will be captured successfully."
+msgstr "Se lo stato é 'In sospeso' non é chiaro se la transazione sarà registrata con successo."
+
+msgid "This password is used for recurring payments and for the alias manager as well as for the server authorization. This is the password of the Unzer account."
+msgstr "This password is used for recurring payments and for the alias manager as well as for the server authorization. This is the password of the Unzer account."
+
+msgid "Free"
+msgstr "Gratis"
+
+msgid "Transaction should be manually reviewed due to a received chargeback."
+msgstr "Transaction should be manually reviewed due to a received chargeback."
+
+msgid "Error with the length of the validation date."
+msgstr "Error with the length of the validation date."
+
+msgid "Day"
+msgstr "Giorno"
+
+msgid "Unzer Trace ID"
+msgstr "Unzer Trace ID"
+
+msgid "Year"
+msgstr "Anno"
+
+msgid "Unzer Basket ID"
+msgstr "Unzer Basket ID"
+
+msgid "Live Site ID (PBX_SITE)"
+msgstr "Live Site ID (PBX_SITE)"
+
+msgid "The capture item with SKU '@sku' has a higher amount (@amountItem) as the original item (@amountOriginal)."
+msgstr "Il prodotto registrato con SKU '@sku' a una quantità (@amountItem) superiore rispetto al prodotto originale (@amountOriginal)."
+
+msgid "Public Key for live requests, provided by Unzer."
+msgstr "Public Key for live requests, provided by Unzer."
+
+msgid "Only captured transaction can be refunded."
+msgstr "Solo le transazioni registrate possono essere rimborsate."
+
+msgid "Either enter your commercial register number, or all other fields which are displayed."
+msgstr "Either enter your commercial register number, or all other fields which are displayed."
+
+msgid "Could not convert object of type '!type' to string."
+msgstr "Impossibile convertire l'oggetto di tipo '!type' in  string."
+
+msgid "!label (Test)"
+msgstr "!label (Test)"
+
+msgid "Here you can set a schema for the orderId parameter transmitted to identify the payment. If left empty it is not transmitted. The following placeholders can be used: {oid} for the order id, which may not be unique or set; {tid} for the sellxed transaction id which is a unique number, or {id} which contains the order id and is guaranteed to be unique."
+msgstr "Here you can set a schema for the orderId parameter transmitted to identify the payment. If left empty it is not transmitted. The following placeholders can be used: {oid} for the order id, which may not be unique or set; {tid} for the sellxed transaction id which is a unique number, or {id} which contains the order id and is guaranteed to be unique."
+
+msgid "Enter the sector your company operates in, e.g. finance."
+msgstr "Enter the sector your company operates in, e.g. finance."
+
+msgid "Capture"
+msgstr "Contabilizzare"
+
+msgid "Refund Transaction"
+msgstr "Accreditare transazioni"
+
+msgid "The given card number has an invalid check sum."
+msgstr "Il numero della carta fornito ha un checksum non valido."
+
+msgid "Is Authorized"
+msgstr "?? autorizzata"
+
+msgid "Charge @id over @amount was created."
+msgstr "Charge @id over @amount was created."
+
+msgid "Missing payment method."
+msgstr "Metodo di pagamento mancante."
+
+msgid "Sales Tax Number"
+msgstr "Numero tasse vendite"
+
+msgid "Please select the expiry year on your card."
+msgstr "Inserisci la data di scadenza della carta."
+
+msgid "No order ID provided."
+msgstr "Nessun ID ordine fornito."
+
+msgid "Refund status"
+msgstr "Status rimborso"
+
+msgid "Date of Birth"
+msgstr "Data di nascita"
+
+msgid "No shipping method available for your region"
+msgstr "Nessun metodo di spedizione disponibile per la tua regione"
+
+msgid "Should the amount be captured automatically after the order (Direkte Belastung) or should the amount only be reserved (Authorize)?"
+msgstr "Should the amount be captured automatically after the order (Direkte Belastung) or should the amount only be reserved (Authorize)?"
+
+msgid "Rounding Adjustment"
+msgstr "Arrotondamenti"
+
+msgid "Transaction Paid"
+msgstr "La transazione é stata pagata"
+
+msgid "Login"
+msgstr "Login"
+
+msgid "!label (Live)"
+msgstr "!label (Live)"
+
+msgid "Unzer Trace ID (processing)"
+msgstr "Unzer Trace ID (processing)"
+
+msgid "In some cases payment methods may use separate keys. If this is the case, add the keys found in the Unzer backend to the payment method configuration in your store."
+msgstr "In some cases payment methods may use separate keys. If this is the case, add the keys found in the Unzer backend to the payment method configuration in your store."
+
+msgid "You have to enter a card number."
+msgstr "SI prega di inserire il numero della carta di credito."
+
+msgid "Unfortunately you cannot continue."
+msgstr "Unfortunately you cannot continue."
+
+msgid "Currency"
+msgstr "Valuta"
+
+msgid "Card Holder Name"
+msgstr "Titolari di carte"
+
+msgid "Created type is not recurring."
+msgstr "Created type is not recurring."
+
+msgid "InvoiceID Schema"
+msgstr "InvoiceID Schema"
+
+msgid "<p>By signing this mandate form, you authorise @merchantName to send instructions to your bank to debit your account and your bank to debit your account in accordance with the instructions from @merchantName.</p><p>Note: As part of your rights, you are entitled to a refund from your bank under the terms and conditions of your agreement with your bank. A refund must be claimed within 8 weeks starting from the date on which your account was debited. Your rights regarding this SEPA mandate are explained in a statement that you can obtain from your bank.</p>p>In case of refusal or rejection of direct debit payment I instruct my bank irrevocably to inform @merchantName or any third party upon request about my name, address and date of birth.</p>"
+msgstr "<p>By signing this mandate form, you authorise @merchantName to send instructions to your bank to debit your account and your bank to debit your account in accordance with the instructions from @merchantName.</p><p>Note: As part of your rights, you are entitled to a refund from your bank under the terms and conditions of your agreement with your bank. A refund must be claimed within 8 weeks starting from the date on which your account was debited. Your rights regarding this SEPA mandate are explained in a statement that you can obtain from your bank.</p>p>In case of refusal or rejection of direct debit payment I instruct my bank irrevocably to inform @merchantName or any third party upon request about my name, address and date of birth.</p>"
+
+msgid "Close transaction for further refunds."
+msgstr "Chiudere la transazione per ulteriori rimborsi."
+
+msgid "Please enter here the number on your card."
+msgstr "Si prega di inserire il numero di carta di carta di credito."
+
+msgid "Cart Subtotal"
+msgstr "Totale parziale del carrello"
+
+msgid "The brand with external name '!key' was not present in the map."
+msgstr "Il marchio con il nome esterno '!key' non era presente nella mappa."
+
+msgid "Element Size"
+msgstr "Element Size"
+
+msgid "The payment could not be processed. However, it seems that the payment was successful nevertheless. Your order was created and can be seen on the order confirmation page. Please contact us to find out more about the status of the order."
+msgstr "Il pagamento non ha potuto essere elaborato. Tuttavia, sembra che il pagamento sia andato a buon fine. L'ordine é stato creato e può essere visto nella pagina di conferma dell'ordine. Vi preghiamo di contattarci per ulteriori informazioni sullo stato dell'ordine."
+
+msgid "Please enter here your social security number."
+msgstr "Si prega di inserire il numero di sicurezza sociale."
+
+msgid "A cancelled transaction cannot be marked as failed."
+msgstr "Una transazione annullata non può essere contrassegnato come fallita."
+
+msgid "Card 3Ds"
+msgstr "Card 3Ds"
+
+msgid "A transaction may be uncertain, when the payment is not guaranteed. For example in case the credit card does not participate in the 3D procedure."
+msgstr "Una transazione può essere incerta, quando il pagamento non é garantito. Per esempio nel caso la carta di credito non partecipa alla procedura 3D."
+
+msgid "The interest rate in percent that you enter here will be applied onto the instalment. The rate must be above the amount that you have agreed up on with Unzer."
+msgstr "The interest rate in percent that you enter here will be applied onto the instalment. The rate must be above the amount that you have agreed up on with Unzer."
+
+msgid "Cancel Transaction"
+msgstr "Annulla operazione"
+
+msgid "Save Shipping Method"
+msgstr "Salva il metodo di spedizione"
+
+msgid "Unzer Unique ID"
+msgstr "Unzer Unique ID"
+
+msgid "External Checkout"
+msgstr "Checkout esterno"
+
+msgid "Select Brand"
+msgstr "Seleziona Marca"
+
+msgid "Diners Club"
+msgstr "Diners Club"
+
+msgid "Please enter here the card holder name on the card."
+msgstr "Inserire qui il nome del titolare della carta."
+
+msgid "Transaction in state partial capture."
+msgstr "Transaction in state partial capture."
+
+msgid "Rest has been cancelled."
+msgstr "Rest has been cancelled."
+
+msgid "Send Customer"
+msgstr "Send Customer"
+
+msgid "Your Payment"
+msgstr "Tuo pagamento"
+
+msgid "Select the date on which your card expires."
+msgstr "Seleziona la data di scadenza della carta."
+
+msgid "Narrow (label from shop)"
+msgstr "Narrow (label from shop)"
+
+msgid "Use Default"
+msgstr "Usare le impostazioni standard"
+
+msgid "You have to enter the card holder name on the card."
+msgstr "Si prega di inserire il nome del proprietario della carta."
+
+msgid "This transaction is already closed for further captures."
+msgstr "Questa transazione é già chiusa."
+
+msgid "Bank code number"
+msgstr "Numero del codice bancario"
+
+msgid "Free Shipping"
+msgstr "Spedizione gratuita"
+
+msgid "The given CVC code has the wrong length."
+msgstr "Il dato codice CVC ha la lunghezza sbagliata."
+
+msgid "IBAN"
+msgstr "IBAN"
+
+msgid "You have to configure the merchant name in the payment method configuration."
+msgstr "You have to configure the merchant name in the payment method configuration."
+
+msgid "An unkown error occurred."
+msgstr "An unkown error occurred."
+
+msgid "The amount of !amount is captured."
+msgstr "La quantità di !amount é registrata."
+
+msgid "Date"
+msgstr "Data"
+
+msgid "You have to enter the BIC."
+msgstr "Si prega di inserire il BIC della tua banca."
+
+msgid "We experienced a problem with your sellxed payment extension. For more information, please visit the information page of the plugin."
+msgstr "Si é verificato un problema con l'estensione del tuo pagamento sellxed . Per maggiori informazioni, si prega di visitare la pagina di configurazione del Unzer plugin."
+
+msgid "Should customer data be transmitted to Unzer? This slightly increases the processing time due to an additional request, but may allow e.g. saving the payment method to the customer."
+msgstr "Should customer data be transmitted to Unzer? This slightly increases the processing time due to an additional request, but may allow e.g. saving the payment method to the customer."
+
+msgid "You have to enter the account holder name."
+msgstr "Si prega di inserire qui il nome del titolare del conto sulla carta."
+
+msgid "Select plan"
+msgstr "Select plan"
+
+msgid "Author"
+msgstr "Autore"
+
+msgid "Card Expiry"
+msgstr "Card Expiry"
+
+msgid "Please enter your issue number, if there is no CVC code on your card."
+msgstr "Inserisci l'issue number, se non c'é alcun codice CVC sulla carta."
+
+msgid "Account Holder Name"
+msgstr "Intestatario del conto"
+
+msgid "Capture amount"
+msgstr "Importo contabilizzato"
+
+msgid "Only on captured transaction the flag customer refusing to pay can be set."
+msgstr "E ' possibile impostare un flag per i clienti che non hanno pagato solo sulle transazioni registrate."
+
+msgid "Could not find the payment method !paymentMethodName."
+msgstr "Impossibile trovare il metodo di pagamento !paymentMethodName."
+
+msgid "Please enter here the International Bank Account Number (IBAN)."
+msgstr "Si prega di inserire l'IBAN (numero di conto bancario internazionale)."
+
+msgid "Directly after order"
+msgstr "Subito dopo l'acquisto"
+
+msgid "The configuration values for Unzer can be set under:"
+msgstr "I valori di configurazione per Unzer possono essere impostati sotto:"
+
+msgid "Refund"
+msgstr "Rimborso"
+
+msgid "Your browser does not allow the execution of JavaScript. Please activate JavaScript in your browser and reload this page."
+msgstr "Il tuo browser non permette l'esecuzione di JavaScript. Si prega di attivare JavaScript nel tuo browser e ricarica questa pagina."
+
+msgid "You have to enter your bank account number."
+msgstr "Si prega di inserire l'IBAN (numero di conto bancario internazionale)."
+
+msgid "Save"
+msgstr "Salva"
+
+msgid "Transaction was authorized, but is already failed in store."
+msgstr "Transaction was authorized, but is already failed in store."
+
+msgid "Select card"
+msgstr "Seleziona le informazioni di pagamento salvate."
+
+msgid "Unzer Charged Amount"
+msgstr "Unzer Charged Amount"
+
+msgid "The given identifier is empty."
+msgstr "The given identifier is empty."
+
+msgid "Enter the date on which your card expires."
+msgstr "Inserisci la data di scadenza della carta."
+
+msgid "Your payment is currently pending."
+msgstr "Your payment is currently pending."
+
+msgid "Payment Method"
+msgstr "Metodo di pagamento"
+
+msgid "Authorize"
+msgstr "Authorize"
+
+msgid "You have to enter your IBAN Number."
+msgstr "Si prega di inserire il codice IBAN."
+
+msgid "Public Key (Test)"
+msgstr "Public Key (Test)"
+
+msgid "Unzer Metadata ID"
+msgstr "Unzer Metadata ID"
+
+msgid "Transaction Uncertain"
+msgstr "Transazione incerta"
+
+msgid "Could not create user."
+msgstr "Impossibile creare utente."
+
+msgid "Please select"
+msgstr "Si prega di selezionare"
+
+msgid "Email / Username"
+msgstr "Email / Username"
+
+msgid "IBAN number"
+msgstr "Numero IBAN"
+
+msgid "Expiry Date"
+msgstr "Expiry Date"
+
+msgid "Could not find template file at default location '!location'."
+msgstr "Impossibile trovare il file template nella posizione di default '!location'."
+
+msgid "You have to enter either the CVC code or the issue number of your card."
+msgstr "Si prega di inserire il codice CVC o il numero di emissione della carta."
+
+msgid "This setting can be used to activate resp. deactivate the 3D secure check. Please check with PayBox if you are allowed to deactivate the 3D secure check. This setting has only an effect when you use the payment page."
+msgstr "This setting can be used to activate resp. deactivate the 3D secure check. Please check with PayBox if you are allowed to deactivate the 3D secure check. This setting has only an effect when you use the payment page."
+
+msgid "You can specify the order status when an order is cancelled."
+msgstr "You can specify the order status when an order is cancelled."
+
+msgid "Test Transaction"
+msgstr "Test per la transazione"
+
+msgid "You have to enter bank code of your bank."
+msgstr "Si prega di inserire il codice delle tua banca"
+
+msgid "3D Secure failed"
+msgstr "3D Secure fallito"
+
+msgid "The given rang is empty. It must be a nummeric value with length of two."
+msgstr "The given rang is empty. It must be a nummeric value with length of two."
+
+msgid "Deferred (authorization)"
+msgstr "Deferred (authorization)"
+
+msgid "The payment method !paymentMethodName is not available in your country ('!country')."
+msgstr "Il metodo di pagamento !paymentMethodName non è disponibile nel tuo paese ('!country')."
+
+msgid "The transaction failed for an unkown reason."
+msgstr "The transaction failed for an unkown reason."
+
+msgid "Activate"
+msgstr "Activate"
+
+msgid "Awaiting confirmation"
+msgstr "In attesa di conferma"
+
+msgid "About"
+msgstr "A proposito di"
+
+msgid "Authorized Status"
+msgstr "Status autorizzato"
+
+msgid "Cancel status"
+msgstr "Status di cancellazione"
+
+msgid "Check to activate the external checkout."
+msgstr "Selezionare questa opzione per attivare il checkout esterno."
+
+msgid "CVC Code"
+msgstr "Codice CVC"
+
+msgid "Authorization Amount"
+msgstr "Importo autorizzazione"
+
+msgid "Less Details"
+msgstr "Meno Dettagli"
+
+msgid "Select the date of your birth."
+msgstr "Inserisci la data di nascita"
+
+msgid "Register"
+msgstr "Registrarsi"
+
+msgid "A cancelled transaction cannot be captured."
+msgstr "Una transazione annullata non può essere registrata."
+
+msgid "If you have any issues with the module please feel free to contact us. See our <a href='https://www.sellxed.com/en/support' target='_blank'>support page</a> for more information."
+msgstr "Se hai problemi con il modulo non esitare a contattarci. Controlla anche <a href='https://www.sellxed.com/en/support' target='_blank'>support page</a> per ulteriori informazioni."
+
+msgid "Message"
+msgstr "Notifica"
+
+msgid "Successful"
+msgstr "Successo"
+
+msgid "Account owner name."
+msgstr "Intestatario del conto"
+
+msgid "Current File:"
+msgstr "File attuale:"
+
+msgid "Transaction Authorized"
+msgstr "Transazione autorizzata"
+
+msgid "Should the amount be captured automatically after the order (Direct Charge) or should the amount only be reserved (Authorize)?"
+msgstr "Should the amount be captured automatically after the order (Direct Charge) or should the amount only be reserved (Authorize)?"
+
+msgid "Refund Amount"
+msgstr "Refund Amount"
+
+msgid "A manual renewal debits the customer directly for this subscription. This by pass any time restriction of the automatic subscription plugin."
+msgstr "Un rinnovo manuale addebita al cliente direttamente per l'abbonamento. Con questa opzione si ignora il meccanismo automatico del plugin dell'abbonamento."
+
+msgid "A captured transaction cannot be cancelled."
+msgstr "Una transazione registrata non può essere annullata."
+
+msgid "Shipping Address"
+msgstr "Indirizzo di consegna"
+
+msgid "Successfully add a manual renewal payment."
+msgstr "Aggiunto con successo un manuale di rinnovo del pagamento."
+
+msgid "Don't change order status"
+msgstr "Don't change order status"
+
+msgid "Here you can configure the merchant name which is displayed as part of the mandate text."
+msgstr "Here you can configure the merchant name which is displayed as part of the mandate text."
+
+msgid "A authorized transaction cannot be marked as failed."
+msgstr "Una transazione autorizzata non può essere contrassegnata come non riuscita."
+
+msgid "Transaction was cancelled, but is already authorized in store."
+msgstr "Transaction was cancelled, but is already authorized in store."
+
+msgid "Private Key for live requests, provided by Unzer."
+msgstr "Private Key for live requests, provided by Unzer."
+
+msgid "Support"
+msgstr "Supporto"
+
+msgid "Month"
+msgstr "Mese"
+
+msgid "Transaction Captured"
+msgstr "Transazione registrata"
+
+msgid "You have to enter the account holder name on the card."
+msgstr "Si prega di inserire il nome del titolare del conto come scritto sulla carta."
+
+msgid "Release Date"
+msgstr "Data di rilascio"
+
+msgid "A failed authorization cannot be authorized."
+msgstr "Una autorizzazione fallita non può essere autorizzata."
+
+msgid "Validation"
+msgstr "Validazione"
+
+msgid "Only authorized transaction can be refunded."
+msgstr "Solo transazioni autorizzate possono essere rimborsate."
+
+msgid "Enter your email address."
+msgstr "Enter your email address."
+
+msgid "The alias transaction could not be conductet with error code: !code, and reason: !reason:"
+msgstr "The alias transaction could not be conductet with error code: !code, and reason: !reason:"
+
+msgid "Capture status"
+msgstr "Status di registrazione"
+
+msgid "A captured transaction cannot be marked as failed."
+msgstr "Una transazione registrata non può essere contrassegnata come non riuscita."
+
+msgid "The transaction is only executed in the test system. The goods should not be delivered."
+msgstr "La transazione viene eseguita solo nel sistema di test. Le merci non devono essere consegnate."
+
+msgid "Token expired"
+msgstr "Token scaduto"
+
+msgid "Amount to refund"
+msgstr "Retribuzione totale"
+
+msgid "Shipment request has been processed."
+msgstr "Shipment request has been processed."
+
+msgid "Payment Failed"
+msgstr "Payment Failed"
+
+msgid "Active"
+msgstr "Active"
+
+msgid "Pending"
+msgstr "In sospeso"
+
+msgid "Close transaction for further captures."
+msgstr "Chiudi la transazione per ulteriori registrazioni"
+
+msgid "Cancelled Status"
+msgstr "Status annullato"
+
+msgid "No"
+msgstr "No"
+
+msgid "Please check the entered CVC number."
+msgstr "Si prega di controllare il numero CVC inserito."
+
+msgid "Order Total"
+msgstr "Totale dell'ordine"
+
+msgid "You have to enter the IBAN."
+msgstr "Si prega di inserire il codice IBAN."
+
+msgid "Shipment created over @amount."
+msgstr "Shipment created over @amount."
+
+msgid "Issuer"
+msgstr "Issuer"
+
+msgid "Could not load payment module."
+msgstr "Impossibile caricare il modulo di pagamento."
+
+msgid "Here you can set a schema for the invoiceId parameter transmitted to identify the payment. If left empty it is not transmitted. The following placeholders can be used: {oid} for the order id, which may not be unique or set; {tid} for the sellxed transaction id which is a unique number, or {id} which contains the order id and is guaranteed to be unique."
+msgstr "Here you can set a schema for the invoiceId parameter transmitted to identify the payment. If left empty it is not transmitted. The following placeholders can be used: {oid} for the order id, which may not be unique or set; {tid} for the sellxed transaction id which is a unique number, or {id} which contains the order id and is guaranteed to be unique."
+
+msgid "Account creation"
+msgstr "Creazione account"
+
+msgid "UnzerCw Interval"
+msgstr "Intervallo di ___ModuleCamel___"
+
+msgid "VISA"
+msgstr "VISA"
+
+msgid "The authorization was not successful"
+msgstr "The authorization was not successful"
+
+msgid "Please enter your IBAN number."
+msgstr "Inserisci il tuo numero IBAN."
+
+msgid "Refunded amount (@refunded) does not equal canceled amount (@canceled). Please check in your Unzer backend."
+msgstr "Refunded amount (@refunded) does not equal canceled amount (@canceled). Please check in your Unzer backend."
+
+msgid "Bad signature format."
+msgstr "Bad signature format."
+
+msgid "The validation of the payment can be carried out at various points during the order process. The validation can be controlled with this option."
+msgstr "La conferma del pagamento può essere effettuata in tempi diversi durante il processo di ordinazione. La conferma può essere controllata con questa opzione."
+
+msgid "Test Mode"
+msgstr "Test Mode"
+
+msgid "BIC"
+msgstr "BIC"
+
+msgid "Set here the maximal order total for which this payment method is available. If it is set to zero, it is always available."
+msgstr "Il metodo di pagamento é disponibile solo quando il totale dell'ordine é superiore all'importo specificato qui. Se é impostato su zero, questo metodo di pagamento é sempre disponibile."
+
+msgid "The given rang is invalid. It must be a nummeric value with length of two."
+msgstr "The given rang is invalid. It must be a nummeric value with length of two."
+
+msgid "Cancelled @amount using id @id."
+msgstr "Cancelled @amount using id @id."
+
+msgid "Unable to process form data: '@inner'."
+msgstr "Unable to process form data: '@inner'."
+
+msgid "If it is not applicable leave the field empty."
+msgstr "Se non é possibile lasciare il campo vuoto."
+
+msgid "Refunded Amount"
+msgstr "Importo rimborsato"
+
