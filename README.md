@@ -4,7 +4,7 @@
 This plugin provides for an easy way to connect to the Unzer Rest API.
 
 Please refer to the attached manual file for installation instructions and usage information.
-General information on our API can be found in our [API Documentation](https://docs.unzer.com/docs/introduction).
+General information on our API can be found in our [API Documentation](https://docs.unzer.com).
    
 
 ## Payment types supported by this plugin are
