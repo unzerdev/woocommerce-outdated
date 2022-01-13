@@ -102,7 +102,7 @@ abstract class Customweb_Unzer_Communication_Processor_OptimisticLockingProcesso
 				return;
 			}
 			catch(Exception $e) {
-				$this->getLogger()->logException($e, $this->transaction->getExternalTransactionId());
+				$this->getLogger()->logException($e, $this->transactionId);
 				$transactionHandler->rollbackTransaction();
 				throw $e;
 			}

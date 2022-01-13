@@ -19,11 +19,11 @@
  *
  */
 
-require_once 'Customweb/Unzer/Method/Validator.php';
 require_once 'Customweb/Form/Element.php';
 require_once 'Customweb/Form/Control/HiddenInput.php';
 require_once 'Customweb/Form/HiddenElement.php';
 require_once 'Customweb/Form/AbstractElement.php';
+require_once 'Customweb/Unzer/Form/Validator.php';
 require_once 'Customweb/Form/Control/Abstract.php';
 require_once 'Customweb/Unzer/Adapter.php';
 require_once 'Customweb/Form/WideElement.php';
@@ -93,7 +93,7 @@ class Customweb_Unzer_Form_Adapter extends Customweb_Unzer_Adapter {
 		$this->addJavascript($lastElement);
 		$control = $lastElement->getControl();
 		if ($control instanceof Customweb_Form_Control_Abstract) {
-			$validator = new Customweb_Unzer_Method_Validator($this->paymentMethod->getJsPrefix(), $control);
+			$validator = new Customweb_Unzer_Form_Validator($this->paymentMethod->getJsPrefix(), $control);
 			$control->addValidator($validator);
 		}
 		else {
@@ -111,11 +111,11 @@ class Customweb_Unzer_Form_Adapter extends Customweb_Unzer_Adapter {
 	protected function addJavascript(&$element){
 		$script = $this->getAddResourcesJavascript();
 
-		$afterLoadScript = $this->getInitializeHeidelpayJavascript();
+		$afterLoadScript = $this->getInitializeUnzerJavascript();
 		$afterLoadScript .= $this->getInitializeCreatorJavascript();
 		$afterLoadScript .= $this->getInitializePlaceholdersJavascript();
 
-		$script .= $this->getHeidelpayLoadedScript($afterLoadScript);
+		$script .= $this->getUnzerLoadedScript($afterLoadScript);
 
 		if ($element instanceof Customweb_Form_AbstractElement) {
 			$element->appendJavaScript($script);
@@ -125,31 +125,32 @@ class Customweb_Unzer_Form_Adapter extends Customweb_Unzer_Adapter {
 		}
 	}
 
-	protected function getHeidelpayLoadedScript($innerScript){
+	protected function getUnzerLoadedScript($innerScript){
 		$prefix = $this->getPaymentMethod()->getJsPrefix();
-		return "
+		return <<<JAVASCRIPT
 function {$prefix}CheckLoaded(){
-	if(typeof heidelpay !== 'undefined') {
-		document.heidelpay = heidelpay;
+	if(typeof unzer !== 'undefined') {
+		document.unzer = unzer;
 	}
-	if(typeof document.heidelpay === 'undefined') {
+	if(typeof document.unzer === 'undefined') {
 		setTimeout({$prefix}CheckLoaded, 500);
 	}
 	else {
 		{$innerScript}
 	}
 }
-{$prefix}CheckLoaded();";
+{$prefix}CheckLoaded();
+JAVASCRIPT;
 	}
 
 	protected function getAddResourcesJavascript(){
-		return "
+		return <<<JAVASCRIPT
 if(typeof document.unzerIncluded === 'undefined') {
 	document.unzerIncluded = true;
 	var body = document.getElementsByTagName('body')[0];
 	if(typeof require === 'function') {
 		require(['{$this->getJavascriptUrl()}'], function(arg) {
-			document.heidelpay = arg;
+			document.unzer = arg;
 		});
 	}
 	else {
@@ -166,26 +167,29 @@ if(typeof document.unzerIncluded === 'undefined') {
 	intCssSrc.href = '{$this->getModuleCssUrl()}';
 	body.appendChild(intCssSrc);
 	body.appendChild(extCssSrc);
-}";
+}
+JAVASCRIPT;
 	}
 	
 	protected function getModuleCssUrl() {
 		return (string)$this->getContainer()->getAssetResolver()->resolveAssetUrl('unzer.css');
 	}
 
-	protected function getInitializeHeidelpayJavascript(){
+	protected function getInitializeUnzerJavascript(){
 		$locale = $this->mapSupportedLocale($this->getOrderContext()->getLanguage());
-		return "
-if(typeof document.heidelpayInstance === 'undefined') {
-	document.heidelpayInstance = new document.heidelpay('{$this->getContainer()->getConfiguration()->getPublicKey()}', {locale: '$locale'});
-}";
+		return <<<JAVASCRIPT
+if(typeof document.unzerInstance === 'undefined') {
+	document.unzerInstance = new document.unzer('{$this->getContainer()->getConfiguration()->getPublicKey()}', {locale: '$locale'});
+}
+JAVASCRIPT;
 	}
 
 	protected function getInitializeCreatorJavascript(){
 		$constructor = $this->getPaymentMethod()->getJsConstructor();
 		$prefix = $this->getPaymentMethod()->getJsPrefix();
-		return "
-document.{$prefix}Instance = document.heidelpayInstance.{$constructor}();";
+		return <<<JAVASCRIPT
+document.{$prefix}Instance = document.unzerInstance.{$constructor}();
+JAVASCRIPT;
 	}
 
 	/**
@@ -200,7 +204,7 @@ document.{$prefix}Instance = document.heidelpayInstance.{$constructor}();";
 	}
 
 	/**
-	 * Toggle if wide elements should be used => should labels be rendered via shop or via heidelpay?
+	 * Toggle if wide elements should be used => should labels be rendered via shop or via unzer?
 	 *
 	 * @return boolean
 	 */
@@ -225,11 +229,11 @@ document.{$prefix}Instance = document.heidelpayInstance.{$constructor}();";
 	}
 
 	protected function getCssUrl(){
-		return $this->getAssetUrl("heidelpay.css");
+		return $this->getAssetUrl("unzer.css");
 	}
 
 	protected function getJavascriptUrl(){
-		return $this->getAssetUrl("heidelpay.js");
+		return $this->getAssetUrl("unzer.js");
 	}
 
 	protected function getAssetUrl($assetFile){
@@ -239,7 +243,7 @@ document.{$prefix}Instance = document.heidelpayInstance.{$constructor}();";
 		), array(
 			"v1",
 			$assetFile
-		), "//static.heidelpay.com/{assetVersion}/{assetFile}");
+		), "https://static.unzer.com/{assetVersion}/{assetFile}");
 	}
 
 	private function mapSupportedLocale(Customweb_Core_Language $language){

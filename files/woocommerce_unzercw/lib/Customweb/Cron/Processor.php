@@ -118,7 +118,7 @@ class Customweb_Cron_Processor {
 	protected function getStartTime() {
 		if ($this->startTime === null) {
 			if (isset($_SERVER['REQUEST_TIME'])) {
-				$this->startTime = $_SERVER['REQUEST_TIME'];
+				$this->startTime =($_SERVER['REQUEST_TIME'] < time()) ? time() : $_SERVER['REQUEST_TIME'];
 			}
 			else {
 				$this->startTime = time();

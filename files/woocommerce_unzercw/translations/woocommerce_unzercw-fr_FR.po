@@ -11,6 +11,9 @@ msgstr "Utilisez les paramètres standard"
 msgid "You can choose a previous used card:"
 msgstr "Vous pouvez choisir une carte déjà utilisée:"
 
+msgid "Unspecified"
+msgstr "Unspecified"
+
 msgid "Transaction Number"
 msgstr "Numéro de transaction"
 
@@ -458,6 +461,9 @@ msgstr "Cancelling @amount for charge with id @id."
 msgid "Save Shipping Method"
 msgstr "Sauvegarder le mode de livraison"
 
+msgid "Please pay the amount of !amount !currency using the following bank data:<br/><b>Descriptor:</b> !descriptor<br/><b>Account Holder:</b> !holder<br/><b>IBAN:</b> !iban<br/><b>BIC:</b> !bic<br/>"
+msgstr "Please pay the amount of !amount !currency using the following bank data:<br/><b>Descriptor:</b> !descriptor<br/><b>Account Holder:</b> !holder<br/><b>IBAN:</b> !iban<br/><b>BIC:</b> !bic<br/>"
+
 msgid "Could not create user."
 msgstr "Impossible de créer l'utilisateur."
 
@@ -608,9 +614,6 @@ msgstr "Enter the public and private key received from Unzer."
 msgid "Deferred"
 msgstr "Differé"
 
-msgid "Please pay the amount of !amount using the following bank data:<br/><b>Descriptor:</b> !descriptor<br/><b>Account Holder:</b> !holder<br/><b>IBAN:</b> !iban<br/><b>BIC:</b> !bic<br/>"
-msgstr "Please pay the amount of !amount using the following bank data:<br/><b>Descriptor:</b> !descriptor<br/><b>Account Holder:</b> !holder<br/><b>IBAN:</b> !iban<br/><b>BIC:</b> !bic<br/>"
-
 msgid "Account owner name."
 msgstr "Nom du titulaire du compte"
 
@@ -742,9 +745,6 @@ msgstr "Impossible de trouver une marque pour le numéro de carte donnée."
 
 msgid "InvoiceID Schema"
 msgstr "InvoiceID Schema"
-
-msgid "<p>By signing this mandate form, you authorise @merchantName to send instructions to your bank to debit your account and your bank to debit your account in accordance with the instructions from @merchantName.</p><p>Note: As part of your rights, you are entitled to a refund from your bank under the terms and conditions of your agreement with your bank. A refund must be claimed within 8 weeks starting from the date on which your account was debited. Your rights regarding this SEPA mandate are explained in a statement that you can obtain from your bank.</p>p>In case of refusal or rejection of direct debit payment I instruct my bank irrevocably to inform @merchantName or any third party upon request about my name, address and date of birth.</p>"
-msgstr "<p>By signing this mandate form, you authorise @merchantName to send instructions to your bank to debit your account and your bank to debit your account in accordance with the instructions from @merchantName.</p><p>Note: As part of your rights, you are entitled to a refund from your bank under the terms and conditions of your agreement with your bank. A refund must be claimed within 8 weeks starting from the date on which your account was debited. Your rights regarding this SEPA mandate are explained in a statement that you can obtain from your bank.</p>p>In case of refusal or rejection of direct debit payment I instruct my bank irrevocably to inform @merchantName or any third party upon request about my name, address and date of birth.</p>"
 
 msgid "Define a maximal order total for this checkout to be available."
 msgstr "Définir un total de commande maximale pour que ce checkout soit disponible."
@@ -1510,6 +1510,9 @@ msgstr "Le schéma de mandat SEPA ne contient pas le mot-clé '!tag'. Ce mot-cl�
 
 msgid "You have to activate JavaScript in your browser to complete the payment."
 msgstr "Vous devez activer JavaScript dans votre navigateur pour effectuer le paiement."
+
+msgid "Bank"
+msgstr "Bank"
 
 msgid "Transaction should be manually reviewed."
 msgstr "Transaction should be manually reviewed."
