@@ -20,6 +20,7 @@
  */
 
 require_once 'Customweb/Unzer/Form/StopValidator.php';
+require_once 'Customweb/Unzer/Communication/Customer/Field/Salutation.php';
 require_once 'Customweb/Unzer/Authorization/Transaction.php';
 require_once 'Customweb/Form/Element.php';
 require_once 'Customweb/Payment/Authorization/IPaymentCustomerContext.php';
@@ -122,9 +123,9 @@ final class Customweb_Unzer_Util_Form {
 		$element->setRequired(self::FIELDS_REQUIRED);
 		return $element;
 	}
-	
+
 	public static function getEmailField(Customweb_Payment_Authorization_IPaymentCustomerContext $paymentCustomerContext) {
-		$control = new Customweb_Form_Control_TextInput('unzer-email', 
+		$control = new Customweb_Form_Control_TextInput('unzer-email',
 				self::getDefaultValue($paymentCustomerContext->getMap(), 'unzer-email'));
 		$element = new Customweb_Form_Element(Customweb_I18n_Translation::__("Email"), $control,
 				Customweb_I18n_Translation::__("Enter your email address."));
@@ -133,8 +134,9 @@ final class Customweb_Unzer_Util_Form {
 
 	public static function getSalutationField(Customweb_Payment_Authorization_IPaymentCustomerContext $paymentCustomerContext){
 		$options = array(
-			'mr' => Customweb_I18n_Translation::__("Mr")->toString(),
-			'mrs' => Customweb_I18n_Translation::__("Mrs")->toString()
+			Customweb_Unzer_Communication_Customer_Field_Salutation::MR => Customweb_I18n_Translation::__("Mr")->toString(),
+			Customweb_Unzer_Communication_Customer_Field_Salutation::MRS => Customweb_I18n_Translation::__("Mrs")->toString(),
+			Customweb_Unzer_Communication_Customer_Field_Salutation::UNKNOWN => Customweb_I18n_Translation::__('Unspecified')->toString(),
 		);
 		$control = new Customweb_Form_Control_Select('unzer-salutation', $options,
 				self::getDefaultValue($paymentCustomerContext->getMap(), 'unzer-salutation'));
@@ -153,13 +155,13 @@ final class Customweb_Unzer_Util_Form {
 
 	public static function getMappedSalutation(Customweb_Payment_Authorization_OrderContext_IAddress $address){
 		$mappings = array(
-			'male' => 'mr',
-			'female' => 'mrs',
-			'mr' => 'mr',
-			'ms' => 'mrs',
-			'miss' => 'mrs',
-			'mz' => 'mrs',
-			'mrs' => 'mrs'
+			'male' => Customweb_Unzer_Communication_Customer_Field_Salutation::MR,
+			'female' => Customweb_Unzer_Communication_Customer_Field_Salutation::MRS,
+			'mr' => Customweb_Unzer_Communication_Customer_Field_Salutation::MR,
+			'ms' => Customweb_Unzer_Communication_Customer_Field_Salutation::MRS,
+			'miss' => Customweb_Unzer_Communication_Customer_Field_Salutation::MRS,
+			'mz' => Customweb_Unzer_Communication_Customer_Field_Salutation::MRS,
+			'mrs' => Customweb_Unzer_Communication_Customer_Field_Salutation::MRS
 		);
 		$keys = array(
 			strtolower($address->getSalutation()),
@@ -170,7 +172,7 @@ final class Customweb_Unzer_Util_Form {
 				return $mappings[$key];
 			}
 		}
-		return 'unknown';
+		return Customweb_Unzer_Communication_Customer_Field_Salutation::UNKNOWN;
 	}
 
 	private static function filterFormData(array $formData){

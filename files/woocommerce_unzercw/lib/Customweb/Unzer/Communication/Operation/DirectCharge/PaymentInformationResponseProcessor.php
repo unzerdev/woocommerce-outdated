@@ -40,9 +40,10 @@ class Customweb_Unzer_Communication_Operation_DirectCharge_PaymentInformationRes
 			throw new Exception("Processing not set.");
 		}
 		$paymentInformation = Customweb_I18n_Translation::__(
-				"Please pay the amount of !amount using the following bank data:<br/><b>Descriptor:</b> !descriptor<br/><b>Account Holder:</b> !holder<br/><b>IBAN:</b> !iban<br/><b>BIC:</b> !bic<br/>",
+				"Please pay the amount of !amount !currency using the following bank data:<br/><b>Descriptor:</b> !descriptor<br/><b>Account Holder:</b> !holder<br/><b>IBAN:</b> !iban<br/><b>BIC:</b> !bic<br/>",
 				array(
 					'!amount' => Customweb_Util_Currency::formatAmount($this->transaction->getAuthorizationAmount(), $this->transaction->getCurrencyCode()),
+					'!currency' => $this->transaction->getCurrencyCode(),
 					'!descriptor' => $data['processing']['descriptor'],
 					'!holder' => $data['processing']['holder'],
 					'!iban' => $data['processing']['iban'],

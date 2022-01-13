@@ -50,7 +50,7 @@ final class Customweb_Unzer_Util_String {
 	}
 	
 	/**
-	 * Clean phone number according to heidelpay restrictions.
+	 * Clean phone number according to unzer restrictions.
 	 * 
 	 * @param string $number
 	 * @return mixed

@@ -132,6 +132,9 @@ final class Customweb_Unzer_Util_Transaction {
 		return null;
 	}
 
+	/**
+	 * @return Customweb_Unzer_Authorization_Refund|null
+	 */
 	public static function getRefundByCancelChargeId(Customweb_Unzer_Authorization_Transaction $transaction, $id){
 		foreach ($transaction->getRefunds() as $refund) {
 			if ($refund instanceof Customweb_Unzer_Authorization_Refund && $refund->getCancelChargeId() == $id) {

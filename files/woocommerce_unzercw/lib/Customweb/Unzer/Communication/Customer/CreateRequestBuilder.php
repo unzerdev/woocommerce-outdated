@@ -21,6 +21,7 @@
 
 require_once 'Customweb/Unzer/Container.php';
 require_once 'Customweb/Core/DateTime.php';
+require_once 'Customweb/Unzer/Communication/Customer/Field/Salutation.php';
 require_once 'Customweb/Unzer/Util/String.php';
 require_once 'Customweb/Unzer/Communication/AbstractTransactionRequestBuilder.php';
 require_once 'Customweb/Core/Http/IRequest.php';
@@ -31,6 +32,7 @@ require_once 'Customweb/Core/Http/IRequest.php';
  * @author Sebastian Bossert
  */
 class Customweb_Unzer_Communication_Customer_CreateRequestBuilder extends Customweb_Unzer_Communication_AbstractTransactionRequestBuilder {
+
 	protected $paymentMethod;
 
 	public function __construct(Customweb_Unzer_Authorization_Transaction $transaction, Customweb_DependencyInjection_IContainer $container){
@@ -94,7 +96,7 @@ class Customweb_Unzer_Communication_Customer_CreateRequestBuilder extends Custom
 		// @formatter:off
 		return array(
 			$type . 'Address' => array_merge(
-				array('name' => $address->getFirstName() . ' ' . $address->getLastName()),
+				$this->getOptionalParameter('name', $address->getFirstName() . ' ' . $address->getLastName(), 81),
 				$this->getOptionalParameter('street', $address->getStreet(), 50),
 				$this->getOptionalParameter('state', $address->getState(), 8),
 				$this->getOptionalParameter('zip', $address->getPostCode(), 10),
@@ -139,7 +141,7 @@ class Customweb_Unzer_Communication_Customer_CreateRequestBuilder extends Custom
 		}
 		return $dob->format('Y-m-d');
 	}
-	
+
 	private function getEmailAddress() {
 		$email = $this->getAddress()->getEMailAddress();
 		if(empty($email)) {
@@ -158,24 +160,36 @@ class Customweb_Unzer_Communication_Customer_CreateRequestBuilder extends Custom
 
 	private function getSalutation(Customweb_Payment_Authorization_OrderContext_IAddress $address){
 		$mappings = array(
-			'male' => 'MR',
-			'female' => 'MRS',
-			'mr' => 'MR',
-			'ms' => 'MRS',
-			'miss' => 'MRS',
-			'mz' => 'MRS',
-			'mrs' => 'MRS'
+			'male' => Customweb_Unzer_Communication_Customer_Field_Salutation::MR,
+			'female' => Customweb_Unzer_Communication_Customer_Field_Salutation::MRS,
+			'mr' => Customweb_Unzer_Communication_Customer_Field_Salutation::MR,
+			'ms' => Customweb_Unzer_Communication_Customer_Field_Salutation::MRS,
+			'miss' => Customweb_Unzer_Communication_Customer_Field_Salutation::MRS,
+			'mz' => Customweb_Unzer_Communication_Customer_Field_Salutation::MRS,
+			'mrs' => Customweb_Unzer_Communication_Customer_Field_Salutation::MRS
 		);
+
 		$keys = array(
 			strtolower($address->getSalutation()),
 			strtolower($address->getGender())
 		);
+
 		foreach ($keys as $key) {
 			if (isset($mappings[$key])) {
 				return $mappings[$key];
 			}
 		}
-		return strtoupper($this->getCustomerDataByKey('unzer-salutation'));
+		$salutation = strtoupper($this->getCustomerDataByKey('unzer-salutation', $this->getPaymentMethodByTransaction($this->getTransaction())->isSalutationRequired()));
+		if(
+			empty($salutation) ||
+			!in_array(
+				strtolower($salutation),
+				Customweb_Unzer_Communication_Customer_Field_Salutation::getAllowableEnumValues()
+			)
+		) {
+			$salutation = Customweb_Unzer_Communication_Customer_Field_Salutation::UNKNOWN;
+		}
+		return $salutation;
 	}
 
 	protected function getConditionallyMandatoryParameter($name, $value, $maxLength = null){

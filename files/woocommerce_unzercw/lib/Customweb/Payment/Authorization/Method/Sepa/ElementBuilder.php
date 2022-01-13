@@ -89,6 +89,11 @@ class Customweb_Payment_Authorization_Method_Sepa_ElementBuilder {
 	private $bicControl = null;
 
 	/**
+	 * @var bool
+	 */
+	private $bicRequired = true;
+
+	/**
 	 * @var array
 	 */
 	private $bicOptionList = null;
@@ -222,16 +227,20 @@ class Customweb_Payment_Authorization_Method_Sepa_ElementBuilder {
 				$description = Customweb_I18n_Translation::__('Please enter here the Bank Identifier Code (BIC).');
 				$this->bicControl->setAutocomplete(false);
 			}
-			
-			$this->bicControl->addValidator(new Customweb_Form_Validator_NotEmpty($this->bicControl, Customweb_I18n_Translation::__("You have to enter the BIC.")));
-		
+
+			$this->bicControl->setRequired($this->bicRequired);
+			if($this->bicRequired) {
+				$this->bicControl->addValidator(new Customweb_Form_Validator_NotEmpty($this->bicControl, Customweb_I18n_Translation::__("You have to enter the BIC.")));
+			}
+
 			$this->bicElement = new Customweb_Form_Element(
-					Customweb_I18n_Translation::__('BIC'),
-					$this->bicControl,
-					$description
+				Customweb_I18n_Translation::__('BIC'),
+				$this->bicControl,
+				$description
 			);
 			$this->bicElement->setElementIntention(Customweb_Form_Intention_Factory::getBankCodeIntention())
 				->setErrorMessage($this->getBicErrorMessage());
+			$this->bicElement->setRequired($this->bicRequired);
 		}
 	}
 	
@@ -507,6 +516,19 @@ class Customweb_Payment_Authorization_Method_Sepa_ElementBuilder {
 	 */
 	protected function setBicElement(Customweb_Form_IElement $bicElement){
 		$this->bicElement = $bicElement;
+		return $this;
+	}
+
+
+	/**
+	* Sets the requirement condition for Bank Identifier Code (BIC) field,
+	* no BIC field is added.
+	*
+	* @param bool $isBicRequired
+	* @return Customweb_Payment_Authorization_Method_Sepa_ElementBuilder
+	*/
+	public function setBicRequired($isBicRequired = true){
+		$this->bicRequired = $isBicRequired;
 		return $this;
 	}
 

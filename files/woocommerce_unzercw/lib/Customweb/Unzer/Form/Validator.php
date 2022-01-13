@@ -28,7 +28,7 @@ require_once 'Customweb/Unzer/Util/Spinner.php';
  * 
  * @author bossert
  */
-class Customweb_Unzer_Method_Validator implements Customweb_Form_Validator_IValidator {
+class Customweb_Unzer_Form_Validator implements Customweb_Form_Validator_IValidator {
 	private $jsPrefix;
 	private $control;
 
@@ -41,19 +41,26 @@ class Customweb_Unzer_Method_Validator implements Customweb_Form_Validator_IVali
 		$showOverlayScript = Customweb_Unzer_Util_Spinner::getLoadOverlayScript();
 		$removeOverlayScript = Customweb_Unzer_Util_Spinner::getRemoveOverlayScript();
 		
-		return "function(resultCallback, element) {
+		return <<<JAVASCRIPT
+function(resultCallback, element) {
 	if(typeof document.{$this->jsPrefix}Error !== 'undefined') {
-		resultCallback(false, document.{$this->jsPrefix}Error.message);
-		return;
+		var error = document.{$this->jsPrefix}Error;
+		var msg = JSON.stringify(error);
+		if(error.msg) {
+			msg = error.msg;
+		}
+		if(error.message) {
+			msg = error.message;
+		}
+		resultCallback(false, msg);
 	}
 	else if(typeof document.{$this->jsPrefix}Result == 'undefined') {
-		$showOverlayScript
+		{$showOverlayScript}
 		document.{$this->jsPrefix}Instance.createResource().then(function(data) {
 			document.{$this->jsPrefix}Result = data;
 			resultCallback(true);
-			$removeOverlayScript
+			{$removeOverlayScript}
 		}).catch(function(error) {
-			document.{$this->jsPrefix}Error = error;
 			var msg = JSON.stringify(error);
 			if(error.msg) {
 				msg = error.msg;
@@ -62,13 +69,14 @@ class Customweb_Unzer_Method_Validator implements Customweb_Form_Validator_IVali
 				msg = error.message;
 			}
 			resultCallback(false, msg);
-			$removeOverlayScript
+			{$removeOverlayScript}
 		});
 	} else {
-		$removeOverlayScript
+		{$removeOverlayScript}
 		resultCallback(true);
 	}
-}";
+}
+JAVASCRIPT;
 	}
 
 	public function getControl(){

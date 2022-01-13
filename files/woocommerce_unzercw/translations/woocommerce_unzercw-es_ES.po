@@ -74,6 +74,9 @@ msgstr "The card brand selection is automatically done depending on the entered 
 msgid "Quantity"
 msgstr "Quantity"
 
+msgid "Unspecified"
+msgstr "Unspecified"
+
 msgid "A captured transaction cannot be cancelled."
 msgstr "Una transacción contabilizada no puede ser cancelada"
 
@@ -425,6 +428,9 @@ msgstr "Place Order"
 msgid "Cancelling @amount for charge with id @id."
 msgstr "Cancelling @amount for charge with id @id."
 
+msgid "Please pay the amount of !amount !currency using the following bank data:<br/><b>Descriptor:</b> !descriptor<br/><b>Account Holder:</b> !holder<br/><b>IBAN:</b> !iban<br/><b>BIC:</b> !bic<br/>"
+msgstr "Please pay the amount of !amount !currency using the following bank data:<br/><b>Descriptor:</b> !descriptor<br/><b>Account Holder:</b> !holder<br/><b>IBAN:</b> !iban<br/><b>BIC:</b> !bic<br/>"
+
 msgid "Social Security Number"
 msgstr "Número de Seguro Social"
 
@@ -481,9 +487,6 @@ msgstr "Test Transaction"
 
 msgid "Yes"
 msgstr "Sí"
-
-msgid "Please pay the amount of !amount using the following bank data:<br/><b>Descriptor:</b> !descriptor<br/><b>Account Holder:</b> !holder<br/><b>IBAN:</b> !iban<br/><b>BIC:</b> !bic<br/>"
-msgstr "Please pay the amount of !amount using the following bank data:<br/><b>Descriptor:</b> !descriptor<br/><b>Account Holder:</b> !holder<br/><b>IBAN:</b> !iban<br/><b>BIC:</b> !bic<br/>"
 
 msgid "If the status is 'Pending' it is unclear whether the transaction will be refunded successfully."
 msgstr "Si el estado es pendiente' no está claro si la transacción será devuelto con éxito."
@@ -799,9 +802,6 @@ msgstr "!label (Live)"
 
 msgid "InvoiceID Schema"
 msgstr "InvoiceID Schema"
-
-msgid "<p>By signing this mandate form, you authorise @merchantName to send instructions to your bank to debit your account and your bank to debit your account in accordance with the instructions from @merchantName.</p><p>Note: As part of your rights, you are entitled to a refund from your bank under the terms and conditions of your agreement with your bank. A refund must be claimed within 8 weeks starting from the date on which your account was debited. Your rights regarding this SEPA mandate are explained in a statement that you can obtain from your bank.</p>p>In case of refusal or rejection of direct debit payment I instruct my bank irrevocably to inform @merchantName or any third party upon request about my name, address and date of birth.</p>"
-msgstr "<p>By signing this mandate form, you authorise @merchantName to send instructions to your bank to debit your account and your bank to debit your account in accordance with the instructions from @merchantName.</p><p>Note: As part of your rights, you are entitled to a refund from your bank under the terms and conditions of your agreement with your bank. A refund must be claimed within 8 weeks starting from the date on which your account was debited. Your rights regarding this SEPA mandate are explained in a statement that you can obtain from your bank.</p>p>In case of refusal or rejection of direct debit payment I instruct my bank irrevocably to inform @merchantName or any third party upon request about my name, address and date of birth.</p>"
 
 msgid "Wrong authorization type."
 msgstr "Wrong authorization type."
@@ -1483,6 +1483,9 @@ msgstr "Estado contabilizado"
 
 msgid "Transaction should be manually reviewed."
 msgstr "Transaction should be manually reviewed."
+
+msgid "Bank"
+msgstr "Bank"
 
 msgid "no"
 msgstr "no"

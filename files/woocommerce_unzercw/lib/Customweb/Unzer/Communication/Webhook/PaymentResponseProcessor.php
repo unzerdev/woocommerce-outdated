@@ -36,7 +36,8 @@ require_once 'Customweb/I18n/Translation.php';
  *
  * @author Sebastian Bossert
  */
-class Customweb_Unzer_Communication_Webhook_PaymentResponseProcessor extends Customweb_Unzer_Communication_AbstractTransactionProcessor {
+class Customweb_Unzer_Communication_Webhook_PaymentResponseProcessor extends Customweb_Unzer_Communication_AbstractTransactionProcessor
+{
 	const STATE_PENDING = 0;
 	const STATE_COMPLETED = 1;
 	const STATE_CANCELED = 2;
@@ -51,7 +52,8 @@ class Customweb_Unzer_Communication_Webhook_PaymentResponseProcessor extends Cus
 	const TRANSACTION_STATE_SUCCESS = 'success';
 	private $callAdapter = true;
 
-	public function process(Customweb_Core_Http_IResponse $response){
+	public function process(Customweb_Core_Http_IResponse $response)
+	{
 		try {
 			parent::process($response);
 			$this->processTransactions();
@@ -59,24 +61,28 @@ class Customweb_Unzer_Communication_Webhook_PaymentResponseProcessor extends Cus
 
 			if ($this->transaction->isCaptured()) {
 				$this->getLogger()->logDebug('Transaction is captured, updating type information');
-				$requestBuilder = new Customweb_Unzer_Communication_Type_RetrieveRequestBuilder($this->transaction,
-						$this->getContainer());
+				$requestBuilder = new Customweb_Unzer_Communication_Type_RetrieveRequestBuilder(
+					$this->transaction,
+					$this->getContainer()
+				);
 				$responseProcessor = new Customweb_Unzer_Communication_Type_ResponseProcessor($this->transaction, $this->getContainer());
-				$processor = new Customweb_Unzer_Communication_Processor_DefaultProcessor($requestBuilder, $responseProcessor,
-						$this->getContainer());
+				$processor = new Customweb_Unzer_Communication_Processor_DefaultProcessor(
+					$requestBuilder,
+					$responseProcessor,
+					$this->getContainer()
+				);
 				$processor->process();
-			}
-			else {
+			} else {
 				$this->getLogger()->logDebug('Transaction is not captured yet');
 			}
-		}
-		catch (Exception $e) {
+		} catch (Exception $e) {
 			$this->fail($e->getMessage());
 			return $this->transaction->getFailedUrl();
 		}
 	}
 
-	protected function processTransactions(){
+	protected function processTransactions()
+	{
 		if (isset($this->data['transactions'])) {
 			foreach ($this->data['transactions'] as $transaction) {
 				switch ($transaction['type']) {
@@ -100,7 +106,8 @@ class Customweb_Unzer_Communication_Webhook_PaymentResponseProcessor extends Cus
 		}
 	}
 
-	protected function processAuthorize($transaction){
+	protected function processAuthorize($transaction)
+	{
 		$this->getLogger()->logDebug("processAuthorize called", $transaction);
 		if ($this->transaction->isAuthorized()) {
 			$this->getLogger()->logDebug("transaction already authorized, skipping");
@@ -115,53 +122,64 @@ class Customweb_Unzer_Communication_Webhook_PaymentResponseProcessor extends Cus
 		}
 	}
 
-	protected function processNewCapture($id, $transaction){
+	protected function processNewCapture($id, $transaction)
+	{
 		$this->getLogger()->logDebug("creating new capture");
 		try {
 			$this->transaction->partialCaptureDry($transaction['amount']);
 			$capture = $this->transaction->partialCapture($transaction['amount']);
 			if ($this->callAdapter) {
 				$this->getLogger()->logDebug("calling capture adapter");
-				$this->getContainer()->getShopCaptureAdapter()->partialCapture($this->transaction, $capture->getCaptureItems(),
-						!$this->transaction->isCapturePossible());
+				$this->getContainer()->getShopCaptureAdapter()->partialCapture(
+					$this->transaction,
+					$capture->getCaptureItems(),
+					!$this->transaction->isCapturePossible()
+				);
 			}
 			/** @var $capture Customweb_Unzer_Authorization_Capture */
 			$capture->setChargeId($id);
 			return $capture;
-		}
-		catch (Exception $e) {
+		} catch (Exception $e) {
 			$this->getLogger()->logException($e, $transaction);
 			$this->transaction->addHistoryItem(
-					new Customweb_Payment_Authorization_DefaultTransactionHistoryItem(
-							Customweb_I18n_Translation::__("Creating new charge failed: @message.", array(
-								'@message' => $e->getMessage()
-							)), Customweb_Payment_Authorization_ITransactionHistoryItem::ACTION_LOG));
+				new Customweb_Payment_Authorization_DefaultTransactionHistoryItem(
+					Customweb_I18n_Translation::__("Creating new charge failed: @message.", array(
+						'@message' => $e->getMessage()
+					)),
+					Customweb_Payment_Authorization_ITransactionHistoryItem::ACTION_LOG
+				)
+			);
 		}
 		return null;
 	}
 
-	protected function processUnmappedCharge($id, array $transaction, $isNewCharge){
+	protected function processUnmappedCharge($id, array $transaction, $isNewCharge)
+	{
 		if (!$this->getPaymentMethodByTransaction($this->transaction)->isDeferredCapturingActive() && !$this->transaction->isAuthorized()) {
 			$this->getLogger()->logDebug("authorizing direct charge");
 			$this->transaction->authorize();
 		}
-		if (!$this->transaction->isCaptured() &&
-				Customweb_Util_Currency::compareAmount($this->transaction->getCapturableAmount(), $transaction['amount'],
-						$this->transaction->getCurrencyCode()) === 1) {
+		if (
+			!$this->transaction->isCaptured() &&
+			Customweb_Util_Currency::compareAmount(
+				$this->transaction->getCapturableAmount(),
+				$transaction['amount'],
+				$this->transaction->getCurrencyCode()
+			) === 1
+		) {
 			$capture = $this->processNewCapture($id, $transaction);
-		}
-		else {
+		} else {
 			$capture = Customweb_Unzer_Util_Transaction::getCaptureByAmount($this->transaction, $transaction['amount']);
 			if ($capture) {
 				$capture->setChargeId($id);
-			}
-			else if ($isNewCharge) { // only add once
+			} else if ($isNewCharge) { // only add once
 				$this->addChargeReceivedMessage($id, $transaction);
 			}
 		}
 	}
 
-	protected function processCharge($transaction){
+	protected function processCharge($transaction)
+	{
 		$this->getLogger()->logDebug("processCharge called", $transaction);
 		$isNewCharge = $this->transaction->processCharge($transaction);
 		$id = Customweb_Unzer_Util_String::extractChargeIdFromUrl($transaction['url']);
@@ -175,24 +193,32 @@ class Customweb_Unzer_Communication_Webhook_PaymentResponseProcessor extends Cus
 		}
 	}
 
-	protected function addChargeReceivedMessage($id, array $transaction){
+	protected function addChargeReceivedMessage($id, array $transaction)
+	{
 		$this->transaction->addHistoryItem(
-				new Customweb_Payment_Authorization_DefaultTransactionHistoryItem(
-						Customweb_I18n_Translation::__("Charge @id for @amount received and processed.",
-								array(
-									'@id' => $id,
-									'@amount' => $transaction['amount']
-								)), Customweb_Payment_Authorization_ITransactionHistoryItem::ACTION_LOG));
+			new Customweb_Payment_Authorization_DefaultTransactionHistoryItem(
+				Customweb_I18n_Translation::__(
+					"Charge @id for @amount received and processed.",
+					array(
+						'@id' => $id,
+						'@amount' => $transaction['amount']
+					)
+				),
+				Customweb_Payment_Authorization_ITransactionHistoryItem::ACTION_LOG
+			)
+		);
 	}
 
-	protected function isCreateCapture($transaction){
+	protected function isCreateCapture($transaction)
+	{
 		$paymentMethod = $this->getPaymentMethodByTransaction($this->transaction);
 		return !$paymentMethod->isShipmentSupported() && // do not create captures if capture should create shipments
-				($transaction['status'] === self::TRANSACTION_STATE_SUCCESS ||
+			($transaction['status'] === self::TRANSACTION_STATE_SUCCESS ||
 				($transaction['status'] == 'pending' && $paymentMethod->isCreatePendingCapture()));
 	}
 
-	protected function processCancelCharge($transaction){
+	protected function processCancelCharge($transaction)
+	{
 		$this->getLogger()->logDebug("processCancelCharge called", $transaction);
 		if (!$this->transaction->isCaptured()) {
 			$this->getLogger()->logDebug("not captured, cancelling auth directly (skipping pending / failed charge step)");
@@ -213,33 +239,47 @@ class Customweb_Unzer_Communication_Webhook_PaymentResponseProcessor extends Cus
 		if ($refund == null) {
 			$this->getLogger()->logDebug("creating new refund");
 			$refund = $this->transaction->refund($transaction['amount']);
+			/** @var Customweb_Unzer_Authorization_Refund $refund */
 			$refund->setCancelChargeId($cancelId);
 			if ($this->callAdapter) {
 				$this->getLogger()->logDebug("calling refund adapter");
-				$this->getContainer()->getShopRefundAdapter()->partialRefund($this->transaction, $refund->getRefundItems(),
-						!$this->transaction->isRefundPossible());
+				$this->getContainer()->getShopRefundAdapter()->partialRefund(
+					$this->transaction,
+					$refund->getRefundItems(),
+					!$this->transaction->isRefundPossible()
+				);
 			}
 		}
 		$refund->setStatus(Customweb_Unzer_Util_Transaction::mapRefundStatus($transaction['status']));
 	}
 
-	protected function processCancelAuthorize($transaction){
+	protected function processCancelAuthorize($transaction)
+	{
 		$this->getLogger()->logDebug("processCancelAuthorize called", $transaction);
 		$cancelId = Customweb_Unzer_Util_String::extractCancelIdFromUrl($transaction['url']);
 		if (!$this->transaction->isProcessed($cancelId)) {
 			$this->getLogger()->logDebug("processing new cancel");
 			$this->transaction->addProcessed($cancelId);
-			if (Customweb_Util_Currency::compareAmount($transaction['amount'], $this->transaction->getAuthorizationAmount(),
-					$this->transaction->getCurrencyCode()) === 0) {
+			if (Customweb_Util_Currency::compareAmount(
+				$transaction['amount'],
+				$this->transaction->getAuthorizationAmount(),
+				$this->transaction->getCurrencyCode()
+			) === 0) {
 				$this->transaction->cancel();
 				if ($this->callAdapter) {
 					$this->getContainer()->getShopCancelAdapter()->cancel($this->transaction);
 				}
+			} else {
+				$this->transaction->addHistoryItem(new Customweb_Payment_Authorization_DefaultTransactionHistoryItem(Customweb_I18n_Translation::__("Received cancel with id @id over @amount.", [
+					'@id' => $transaction['id'], 
+					'@amount' => $transaction['amount']
+				]), Customweb_Payment_Authorization_ITransactionHistoryItem::ACTION_CANCELLATION));
 			}
 		}
 	}
 
-	protected function processChargeback($transaction){
+	protected function processChargeback($transaction)
+	{
 		$this->getLogger()->logDebug("processChargeback called", $transaction);
 		$this->transaction->addChargeback($transaction);
 		$this->chargeback();
@@ -248,7 +288,8 @@ class Customweb_Unzer_Communication_Webhook_PaymentResponseProcessor extends Cus
 	/**
 	 * Backup to ensure state is correct if transactions could not be processed correctly.
 	 */
-	protected function processState(){
+	protected function processState()
+	{
 		switch ($this->data['state']['id']) {
 			case self::STATE_PENDING:
 				$this->pending();
@@ -271,34 +312,39 @@ class Customweb_Unzer_Communication_Webhook_PaymentResponseProcessor extends Cus
 		}
 	}
 
-	protected function pending(){
+	protected function pending()
+	{
 		$paymentMethod = $this->getPaymentMethodByTransaction($this->transaction);
 		if ($paymentMethod->isPendingAuthorization()) {
-			$this->authorize(Customweb_I18n_Translation::__("The transaction is pending."),
-					$this->getPaymentMethodByTransaction($this->transaction)->isPendingAuthorizePaid());
+			$this->authorize(
+				Customweb_I18n_Translation::__("The transaction is pending."),
+				$this->getPaymentMethodByTransaction($this->transaction)->isPendingAuthorizePaid()
+			);
 			if ($paymentMethod->isPendingUncertain()) {
 				$this->transaction->setAuthorizationUncertain(true);
 			}
 		}
 	}
 
-	protected function authorize($message = ''){
+	protected function authorize($message = '')
+	{
 		if ($this->transaction->isAuthorized()) {
-		}
-		else if ($this->transaction->isAuthorizationFailed()) {
+		} else if ($this->transaction->isAuthorizationFailed()) {
 			$this->transaction->addHistoryItem(
-					new Customweb_Payment_Authorization_DefaultTransactionHistoryItem(
-							Customweb_I18n_Translation::__("Transaction was authorized, but is already failed in store."),
-							Customweb_Payment_Authorization_ITransactionHistoryItem::ACTION_LOG));
-		}
-		else {
+				new Customweb_Payment_Authorization_DefaultTransactionHistoryItem(
+					Customweb_I18n_Translation::__("Transaction was authorized, but is already failed in store."),
+					Customweb_Payment_Authorization_ITransactionHistoryItem::ACTION_LOG
+				)
+			);
+		} else {
 			$this->transaction->authorize($message, $this->getPaymentMethodByTransaction($this->transaction)->isAuthorizePaid());
 			$this->callAdapter = false;
 		}
 		$this->transaction->setAuthorizationUncertain(false);
 	}
 
-	protected function capture(){
+	protected function capture()
+	{
 		$this->getLogger()->logDebug(__METHOD__);
 		$this->authorize();
 		if ($this->transaction->isApiCapturePossible()) {
@@ -309,9 +355,14 @@ class Customweb_Unzer_Communication_Webhook_PaymentResponseProcessor extends Cus
 			$capture = $this->transaction->capture();
 			foreach ($this->data['transactions'] as $transaction) {
 				if ($transaction['type'] === self::TRANSACTION_TYPE_CHARGE) {
-					if ($transaction['status'] === self::TRANSACTION_STATE_SUCCESS &&
-							Customweb_Util_Currency::compareAmount($transaction['amount'], $capture->getAmount(),
-									$this->transaction->getCurrencyCode()) === 0) {
+					if (
+						$transaction['status'] === self::TRANSACTION_STATE_SUCCESS &&
+						Customweb_Util_Currency::compareAmount(
+							$transaction['amount'],
+							$capture->getAmount(),
+							$this->transaction->getCurrencyCode()
+						) === 0
+					) {
 						$chargeId = Customweb_Unzer_Util_String::extractChargebackIdFromUrl($transaction['url']);
 						$capture->setChargeId($chargeId);
 					}
@@ -323,26 +374,32 @@ class Customweb_Unzer_Communication_Webhook_PaymentResponseProcessor extends Cus
 			if ($this->callAdapter) {
 				$this->getContainer()->getShopCaptureAdapter()->capture($this->transaction);
 			}
-		}
-		else if (!$this->transaction->isCaptured()) {
+		} else if (!$this->transaction->isCaptured()) {
 			$this->transaction->addHistoryItem(
-					new Customweb_Payment_Authorization_DefaultTransactionHistoryItem(
-							Customweb_I18n_Translation::__(
-									"Transaction was captured in Unzer, but cannot be captured in store."),
-							Customweb_Payment_Authorization_ITransactionHistoryItem::ACTION_LOG));
+				new Customweb_Payment_Authorization_DefaultTransactionHistoryItem(
+					Customweb_I18n_Translation::__(
+						"Transaction was captured in Unzer, but cannot be captured in store."
+					),
+					Customweb_Payment_Authorization_ITransactionHistoryItem::ACTION_LOG
+				)
+			);
 		}
 		$this->transaction->setPaid($this->getPaymentMethodByTransaction($this->transaction)->isCompletedPaid());
 	}
 
-	protected function partialCapture(){
+	protected function partialCapture()
+	{
 		$this->authorize();
 		$this->transaction->addHistoryItem(
-				new Customweb_Payment_Authorization_DefaultTransactionHistoryItem(
-						Customweb_I18n_Translation::__("Transaction is in state partial capture."),
-						Customweb_Payment_Authorization_ITransactionHistoryItem::ACTION_LOG));
+			new Customweb_Payment_Authorization_DefaultTransactionHistoryItem(
+				Customweb_I18n_Translation::__("Transaction is in state partial capture."),
+				Customweb_Payment_Authorization_ITransactionHistoryItem::ACTION_LOG
+			)
+		);
 	}
 
-	protected function fail($message = null){
+	protected function fail($message = null)
+	{
 		if ($this->transaction->isAuthorized()) {
 			$nonRefunded = $this->transaction->getNonRefundedLineItems();
 			$totalNonRefunded = Customweb_Util_Invoice::getTotalAmountIncludingTax($nonRefunded);
@@ -354,26 +411,29 @@ class Customweb_Unzer_Communication_Webhook_PaymentResponseProcessor extends Cus
 				if ($this->callAdapter) {
 					$this->getContainer()->getShopCancelAdapter()->cancel($this->transaction);
 				}
-			}
-			else if ($this->transaction->isApiRefundPossible()) {
+			} else if ($this->transaction->isApiRefundPossible()) {
 				$this->transaction->refundByLineItems($nonRefunded, true, $message);
 				if ($this->callAdapter) {
 					$this->getContainer()->getShopRefundAdapter()->partialRefund($this->transaction, $nonRefunded, true);
 				}
-			}
-			else if (!$this->transaction->isUncertainTransactionFinallyDeclined() && !$this->transaction->isCancelled() &&
-					Customweb_Util_Currency::compareAmount($totalNonRefunded, 0, $this->transaction->getCurrencyCode()) !== 0) { // not cancelled, and still items not refunded.
+			} else if (
+				!$this->transaction->isUncertainTransactionFinallyDeclined() && !$this->transaction->isCancelled() &&
+				Customweb_Util_Currency::compareAmount($totalNonRefunded, 0, $this->transaction->getCurrencyCode()) !== 0
+			) { // not cancelled, and still items not refunded.
 				$this->getLogger()->logDebug("Unable to cancel not possible, not cancelled, not refundable, open items:", $nonRefunded);
 				if (empty($message)) {
 					$message = Customweb_I18n_Translation::__(
-							"Transaction was cancelled or refunded, but status change cannot be reflected in store.");
+						"Transaction was cancelled or refunded, but status change cannot be reflected in store."
+					);
 				}
 				$this->transaction->addHistoryItem(
-						new Customweb_Payment_Authorization_DefaultTransactionHistoryItem($message,
-								Customweb_Payment_Authorization_ITransactionHistoryItem::ACTION_LOG));
+					new Customweb_Payment_Authorization_DefaultTransactionHistoryItem(
+						$message,
+						Customweb_Payment_Authorization_ITransactionHistoryItem::ACTION_LOG
+					)
+				);
 			}
-		}
-		else if (!$this->transaction->isAuthorizationFailed()) {
+		} else if (!$this->transaction->isAuthorizationFailed()) {
 			if (empty($message)) {
 				$message = Customweb_I18n_Translation::__("The transaction was cancelled.");
 			}
@@ -382,20 +442,25 @@ class Customweb_Unzer_Communication_Webhook_PaymentResponseProcessor extends Cus
 		$this->transaction->setPaid(false);
 	}
 
-	protected function review(){
+	protected function review()
+	{
 		$this->transaction->setAuthorizationUncertain(true);
 		$this->transaction->addHistoryItem(
-				new Customweb_Payment_Authorization_DefaultTransactionHistoryItem(
-						Customweb_I18n_Translation::__("Transaction should be manually reviewed."),
-						Customweb_Payment_Authorization_ITransactionHistoryItem::ACTION_LOG));
+			new Customweb_Payment_Authorization_DefaultTransactionHistoryItem(
+				Customweb_I18n_Translation::__("Transaction should be manually reviewed."),
+				Customweb_Payment_Authorization_ITransactionHistoryItem::ACTION_LOG
+			)
+		);
 	}
 
-	protected function chargeback(){
+	protected function chargeback()
+	{
 		$this->transaction->setAuthorizationUncertain(true);
 		$this->transaction->setPaid(false);
 	}
 
-	protected function getValidResponseCodes(){
+	protected function getValidResponseCodes()
+	{
 		return array(
 			200
 		);

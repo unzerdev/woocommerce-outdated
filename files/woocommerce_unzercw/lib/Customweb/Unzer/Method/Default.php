@@ -121,6 +121,7 @@ class Customweb_Unzer_Method_Default extends Customweb_Payment_Authorization_Abs
  				'b2b' => 'yes',
  				'birthdate' => 'mandatory',
  				'pending' => 'authorize',
+ 				'customer_salutation' => 'mandatory',
  			),
  			'not_supported_features' => array(
 				0 => 'Recurring',
@@ -176,6 +177,7 @@ class Customweb_Unzer_Method_Default extends Customweb_Payment_Authorization_Abs
  				'returnUrl' => 'mandatory',
  				'birthdate' => 'mandatory',
  				'b2b' => 'yes',
+ 				'customer_salutation' => 'mandatory',
  			),
  			'not_supported_features' => array(
 				0 => 'Capturing',
@@ -614,14 +616,15 @@ class Customweb_Unzer_Method_Default extends Customweb_Payment_Authorization_Abs
 		$showOverlayScript = Customweb_Unzer_Util_Spinner::getLoadOverlayScript();
 
 		$identifier = $this->getJsPrefix();
-		return "function(formFields) {
+		return <<<JAVASCRIPT
+function(formFields) {
 	var preError = {$this->getJavascriptCallbackPreError($transaction)};
 	if(preError) {
 		fail('{$failureEndpoint}&error=' + encodeUri(preError));
 		return;
 	}
 
-	$showOverlayScript
+	{$showOverlayScript}
 
 	var fail = {$failCallback};
 	var success = {$successCallback};
@@ -660,7 +663,8 @@ class Customweb_Unzer_Method_Default extends Customweb_Payment_Authorization_Abs
 	httpRequest.open('POST', '$paymentEndpoint');
 	httpRequest.setRequestHeader('Content-Type', 'application/json');
 	httpRequest.send(JSON.stringify({result: document.{$identifier}Result, form: formFields}));
-}";
+}
+JAVASCRIPT;
 	}
 
 	/**
@@ -792,7 +796,7 @@ class Customweb_Unzer_Method_Default extends Customweb_Payment_Authorization_Abs
 			else {
 				$fields += $this->getB2CInputFields($orderContext, $paymentCustomerContext);
 			}
-			if (Customweb_Unzer_Util_Form::getMappedSalutation($orderContext->getBillingAddress()) === 'unknown') {
+			if (Customweb_Unzer_Util_Form::getMappedSalutation($orderContext->getBillingAddress()) === 'unknown' && $this->isSalutationRequired()) {
 				$fields[] = Customweb_Unzer_Util_Form::getSalutationField($paymentCustomerContext);
 			}
 			if ($orderContext->getBillingAddress()->getEMailAddress() === null && $this->isEmailRequired()) {
@@ -988,6 +992,10 @@ class Customweb_Unzer_Method_Default extends Customweb_Payment_Authorization_Abs
 	public function isEmailRequired() {
 		return $this->getPaymentMethodParameter('customer_email') === 'mandatory';
 	}
+	
+	public function isSalutationRequired() {
+		return $this->getPaymentMethodParameter('customer_salutation') === 'mandatory';
+	}
 
 	public function isBirthdateRequired(){
 		return $this->getPaymentMethodParameter('birthdate') === 'mandatory';
@@ -1178,6 +1186,9 @@ class Customweb_Unzer_Method_Default extends Customweb_Payment_Authorization_Abs
 		foreach ($placeholders as $name => $id) {
 			$script .= "
 {$creator}('$name', {containerId: '$id', onlyIframe: $onlyIframe});";
+			if ($onlyIframe == 'true') {
+				$script .= "document.getElementById('$id').classList.add('unzer-iframe-only');";
+			}
 		}
 		return $script;
 	}

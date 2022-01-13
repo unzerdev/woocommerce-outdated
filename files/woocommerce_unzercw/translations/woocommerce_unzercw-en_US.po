@@ -41,6 +41,9 @@ msgstr "The transaction was cancelled."
 msgid "Don't change order status"
 msgstr "Don't change order status"
 
+msgid "Unspecified"
+msgstr "Unspecified"
+
 msgid "Please enter here the commercial number of your company."
 msgstr "Please enter the commercial number of your company."
 
@@ -383,6 +386,9 @@ msgstr "Commercial Register Number"
 msgid "The given card number has an invalid length."
 msgstr "The given card number has an invalid length."
 
+msgid "Please pay the amount of !amount !currency using the following bank data:<br/><b>Descriptor:</b> !descriptor<br/><b>Account Holder:</b> !holder<br/><b>IBAN:</b> !iban<br/><b>BIC:</b> !bic<br/>"
+msgstr "Please pay the amount of !amount !currency using the following bank data:<br/><b>Descriptor:</b> !descriptor<br/><b>Account Holder:</b> !holder<br/><b>IBAN:</b> !iban<br/><b>BIC:</b> !bic<br/>"
+
 msgid "Place Order"
 msgstr "Place Order"
 
@@ -481,9 +487,6 @@ msgstr "Amount"
 
 msgid "Password"
 msgstr "Password"
-
-msgid "Please pay the amount of !amount using the following bank data:<br/><b>Descriptor:</b> !descriptor<br/><b>Account Holder:</b> !holder<br/><b>IBAN:</b> !iban<br/><b>BIC:</b> !bic<br/>"
-msgstr "Please pay the amount of !amount using the following bank data:<br/><b>Descriptor:</b> !descriptor<br/><b>Account Holder:</b> !holder<br/><b>IBAN:</b> !iban<br/><b>BIC:</b> !bic<br/>"
 
 msgid "This transaction is already closed for further captures."
 msgstr "This transaction is already closed for further captures"
@@ -817,6 +820,9 @@ msgstr "Could not find template file at default location '!location'."
 
 msgid "Shipping Address"
 msgstr "Delivery address"
+
+msgid "Bank"
+msgstr "Bank"
 
 msgid "Send Basket"
 msgstr "Send Basket"

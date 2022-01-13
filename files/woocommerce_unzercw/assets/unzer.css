@@ -12,6 +12,9 @@
 
 .unzer-placeholder {
 	min-width: 12em;
+	background: white;
+	border: 1px solid black;
+	padding: 2px;
 }
 
 .page-checkout-confirmation #unzercw-confirmation-ajax-authorization-form .unzercw-confirmation-form .unzercw-control-label{
@@ -24,11 +27,38 @@
 
 .unzer-placeholder,
 .unzer-mandate,
-.heidelpayUI.form .field {
+.unzerUI.form .field {
 	max-width: 400px;
 }
 
-.heidelpayUI.form .icon {
+.unzer-iframe-only {
+	max-height: 30px;
+}
+
+.unzerUI.form .icon {
 	width: auto;
 	height: auto;
+}
+.unzerUI.input {
+	width: 100%;
+}
+
+.unzerUI.error.message {
+	display: none;
+}
+
+.unzerChoices {
+	display: block !important;
+}
+
+.unzerUI.form .field>label {
+	display: none !important;
+}
+
+.unzerChoices__input.unzerChoices__input--cloned {
+	width: 100%;
+}
+
+.field.iban.sixteen.wide.required {
+	display: inline-block
 }

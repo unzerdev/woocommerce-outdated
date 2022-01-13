@@ -32,7 +32,7 @@ class Customweb_Unzer_Method_EPS extends Customweb_Unzer_Method_Default {
 
 	public function getRequiredPlaceholders(){
 		return array(
-			'eps' => Customweb_I18n_Translation::__("Issuer")
+			'eps' => Customweb_I18n_Translation::__("Bank")
 		);
 	}
 }

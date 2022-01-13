@@ -251,9 +251,6 @@ msgstr "Je moet de BIC in te voeren."
 msgid "No, use the dropdown."
 msgstr "No, use the dropdown."
 
-msgid "Please pay the amount of !amount using the following bank data:<br/><b>Descriptor:</b> !descriptor<br/><b>Account Holder:</b> !holder<br/><b>IBAN:</b> !iban<br/><b>BIC:</b> !bic<br/>"
-msgstr "Please pay the amount of !amount using the following bank data:<br/><b>Descriptor:</b> !descriptor<br/><b>Account Holder:</b> !holder<br/><b>IBAN:</b> !iban<br/><b>BIC:</b> !bic<br/>"
-
 msgid "The payment could not be processed. However, it seems that the payment was successful nevertheless. Your order was created and can be seen on the order confirmation page. Please contact us to find out more about the status of the order."
 msgstr "De betaling kon niet direct worden geverifieerd, maar het lijkt er desondanks op dat de betaling toch is geslaagd. Je bestelling is aangemaakt. Neem contact met ons op voor meer informatie met betrekking tot de status van jouw bestelling."
 
@@ -374,6 +371,9 @@ msgstr "Capture status"
 msgid "Public Key (Live)"
 msgstr "Public Key (Live)"
 
+msgid "Bank"
+msgstr "Bank"
+
 msgid "You have to enter bank code of your bank."
 msgstr "Je moet bankcode van uw bank in te voeren."
 
@@ -475,6 +475,9 @@ msgstr "The given hmac key is empty."
 
 msgid "Quantity"
 msgstr "Quantity"
+
+msgid "Unspecified"
+msgstr "Unspecified"
 
 msgid "Multiple Shipping Methods"
 msgstr "Multiple Shipping Methods"
@@ -775,6 +778,9 @@ msgstr "The transaction failed with error code !code."
 
 msgid "Captured Amount"
 msgstr "Opgenomen bedrag"
+
+msgid "Please pay the amount of !amount !currency using the following bank data:<br/><b>Descriptor:</b> !descriptor<br/><b>Account Holder:</b> !holder<br/><b>IBAN:</b> !iban<br/><b>BIC:</b> !bic<br/>"
+msgstr "Please pay the amount of !amount !currency using the following bank data:<br/><b>Descriptor:</b> !descriptor<br/><b>Account Holder:</b> !holder<br/><b>IBAN:</b> !iban<br/><b>BIC:</b> !bic<br/>"
 
 msgid "Amount to refund"
 msgstr "Kredietbedrag"
@@ -1243,9 +1249,6 @@ msgstr "Transaction was cancelled, but is already authorized in store."
 
 msgid "Direct Debits"
 msgstr "Direct Debits"
-
-msgid "<p>By signing this mandate form, you authorise @merchantName to send instructions to your bank to debit your account and your bank to debit your account in accordance with the instructions from @merchantName.</p><p>Note: As part of your rights, you are entitled to a refund from your bank under the terms and conditions of your agreement with your bank. A refund must be claimed within 8 weeks starting from the date on which your account was debited. Your rights regarding this SEPA mandate are explained in a statement that you can obtain from your bank.</p>p>In case of refusal or rejection of direct debit payment I instruct my bank irrevocably to inform @merchantName or any third party upon request about my name, address and date of birth.</p>"
-msgstr "<p>By signing this mandate form, you authorise @merchantName to send instructions to your bank to debit your account and your bank to debit your account in accordance with the instructions from @merchantName.</p><p>Note: As part of your rights, you are entitled to a refund from your bank under the terms and conditions of your agreement with your bank. A refund must be claimed within 8 weeks starting from the date on which your account was debited. Your rights regarding this SEPA mandate are explained in a statement that you can obtain from your bank.</p>p>In case of refusal or rejection of direct debit payment I instruct my bank irrevocably to inform @merchantName or any third party upon request about my name, address and date of birth.</p>"
 
 msgid "Please enter here the account holder name."
 msgstr "Vul hier de naam van de rekeninghouder."

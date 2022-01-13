@@ -1,4 +1,4 @@
-![Logo](https://dev.unzer.com/wp-content/uploads/2020/09/Unzer__PrimaryLogo_Raspberry_RGB.png)
+![Logo](unzer_logo.svg)
 
 # Unzer WooCommerce Plugin
 This plugin provides for an easy way to connect to the Unzer Rest API.
@@ -38,3 +38,4 @@ For any issues or questions please get in touch with our support team.
 ### Phone
 * DE: [+49 6221 43101-00](tel:+4962214310100)
 * AT: [+43 1 513 66 33 669](tel:+4315136633669)
+ª
