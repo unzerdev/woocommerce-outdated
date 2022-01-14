@@ -4,7 +4,7 @@
  * Plugin Name: WooCommerce UnzerCw
  * Plugin URI: http://www.customweb.ch
  * Description: This plugin adds the UnzerCw payment gateway to your WooCommerce.
- * Version: 1.0.56
+ * Version: 1.0.85
  * Author: customweb GmbH
  * Author URI: http://www.customweb.ch
  */

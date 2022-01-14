@@ -263,6 +263,9 @@ msgstr "Successo"
 msgid "Capture Transaction"
 msgstr "Registrare la transazione"
 
+msgid "Unspecified"
+msgstr "Unspecified"
+
 msgid "The card brand selection is automatically done depending on the entered card number. If no Javascript is active in the browser, a drop down is shown. In case JavaScript a the brand logos can be shown. Should the brand selection using images?"
 msgstr "The card brand selection is automatically done depending on the entered card number. If no Javascript is active in the browser, a drop down is shown. In case JavaScript a the brand logos can be shown. Should the brand selection using images?"
 
@@ -695,9 +698,6 @@ msgstr "Numero IBAN"
 msgid "Wrong authorization type."
 msgstr "Tipo di autorizzazione sbagliato."
 
-msgid "Please pay the amount of !amount using the following bank data:<br/><b>Descriptor:</b> !descriptor<br/><b>Account Holder:</b> !holder<br/><b>IBAN:</b> !iban<br/><b>BIC:</b> !bic<br/>"
-msgstr "Please pay the amount of !amount using the following bank data:<br/><b>Descriptor:</b> !descriptor<br/><b>Account Holder:</b> !holder<br/><b>IBAN:</b> !iban<br/><b>BIC:</b> !bic<br/>"
-
 msgid "This transaction is already closed for further refunds."
 msgstr "Questa transazione é stata chiusa e non sono più possibili rimborsi."
 
@@ -1016,6 +1016,9 @@ msgstr "Arrotondamenti"
 msgid "Transaction Paid"
 msgstr "La transazione é stata pagata"
 
+msgid "Please pay the amount of !amount !currency using the following bank data:<br/><b>Descriptor:</b> !descriptor<br/><b>Account Holder:</b> !holder<br/><b>IBAN:</b> !iban<br/><b>BIC:</b> !bic<br/>"
+msgstr "Please pay the amount of !amount !currency using the following bank data:<br/><b>Descriptor:</b> !descriptor<br/><b>Account Holder:</b> !holder<br/><b>IBAN:</b> !iban<br/><b>BIC:</b> !bic<br/>"
+
 msgid "Login"
 msgstr "Login"
 
@@ -1045,9 +1048,6 @@ msgstr "Created type is not recurring."
 
 msgid "InvoiceID Schema"
 msgstr "InvoiceID Schema"
-
-msgid "<p>By signing this mandate form, you authorise @merchantName to send instructions to your bank to debit your account and your bank to debit your account in accordance with the instructions from @merchantName.</p><p>Note: As part of your rights, you are entitled to a refund from your bank under the terms and conditions of your agreement with your bank. A refund must be claimed within 8 weeks starting from the date on which your account was debited. Your rights regarding this SEPA mandate are explained in a statement that you can obtain from your bank.</p>p>In case of refusal or rejection of direct debit payment I instruct my bank irrevocably to inform @merchantName or any third party upon request about my name, address and date of birth.</p>"
-msgstr "<p>By signing this mandate form, you authorise @merchantName to send instructions to your bank to debit your account and your bank to debit your account in accordance with the instructions from @merchantName.</p><p>Note: As part of your rights, you are entitled to a refund from your bank under the terms and conditions of your agreement with your bank. A refund must be claimed within 8 weeks starting from the date on which your account was debited. Your rights regarding this SEPA mandate are explained in a statement that you can obtain from your bank.</p>p>In case of refusal or rejection of direct debit payment I instruct my bank irrevocably to inform @merchantName or any third party upon request about my name, address and date of birth.</p>"
 
 msgid "Close transaction for further refunds."
 msgstr "Chiudere la transazione per ulteriori rimborsi."
@@ -1363,6 +1363,9 @@ msgstr "Una transazione registrata non può essere annullata."
 
 msgid "Shipping Address"
 msgstr "Indirizzo di consegna"
+
+msgid "Bank"
+msgstr "Bank"
 
 msgid "Successfully add a manual renewal payment."
 msgstr "Aggiunto con successo un manuale di rinnovo del pagamento."

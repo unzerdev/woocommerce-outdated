@@ -20,9 +20,9 @@
  */
 
 require_once 'Customweb/Unzer/Communication/Processor/DefaultProcessor.php';
-require_once 'Customweb/Unzer/Communication/Processor/ManualDirectChargeProcessor.php';
 require_once 'Customweb/Unzer/Communication/Type/Instalment/UpdateResponseProcessor.php';
 require_once 'Customweb/Util/Currency.php';
+require_once 'Customweb/Unzer/Communication/Processor/InstallmentProcessor.php';
 require_once 'Customweb/I18n/Translation.php';
 require_once 'Customweb/Unzer/Method/Default.php';
 require_once 'Customweb/Unzer/Communication/Type/Instalment/UpdateRequestBuilder.php';
@@ -55,7 +55,7 @@ class Customweb_Unzer_Method_FlexipayInstallment extends Customweb_Unzer_Method_
 	 * @return Customweb_Unzer_Communication_Operation_PaymentProcessor
 	 */
 	public function getPaymentProcessor(Customweb_Unzer_Authorization_Transaction $transaction){
-		return new Customweb_Unzer_Communication_Processor_ManualDirectChargeProcessor($transaction->getExternalTransactionId(),
+		return new Customweb_Unzer_Communication_Processor_InstallmentProcessor($transaction->getExternalTransactionId(),
 				$this->getPaymentRequestBuilder($transaction), $this->getContainer(), $transaction->getUnzTypeId()); //TODO cleaner
 	}
 	
@@ -66,12 +66,14 @@ class Customweb_Unzer_Method_FlexipayInstallment extends Customweb_Unzer_Method_
 	}
 	
 	protected function getJavascriptCallbackPreError(Customweb_Payment_Authorization_ITransaction $transaction) {
-		return "(function(){
+		return <<<JAVASCRIPT
+(function(){
 	if(typeof document.{$this->getJsPrefix()}Error !== undefined) {
 		return document.{$this->getJsPrefix()}Error;
 	}
 	return null;
-})();";
+})();
+JAVASCRIPT;
 	}
 	
 	/**
@@ -85,20 +87,20 @@ class Customweb_Unzer_Method_FlexipayInstallment extends Customweb_Unzer_Method_
 		$creator = "document.{$prefix}Instance.create";
 		$script = "";
 		foreach ($placeholders as $name => $id) {
-			$options = array(
+			$encodedOptions = json_encode([
 				'containerId' => $id,
 				'onlyIframe'=>  !$this->isUseWidePlaceholders(),
 				'amount' => Customweb_Util_Currency::formatAmount($orderContext->getOrderAmountInDecimals(), $orderContext->getCurrencyCode()),
 				'currency' => $orderContext->getCurrencyCode(),
 				'effectiveInterest' => $this->getEffectiveInterestRate(),
 				'orderDate' => date('Y-m-d')
-			);
-			$encodedOptions = json_encode($options, JSON_FORCE_OBJECT);
-			$script .= "
-{$creator}($encodedOptions).catch(function(error){
-	document.getElementById('$id').innerText = error.message;
+			], JSON_FORCE_OBJECT);
+			$script .= <<<JAVASCRIPT
+{$creator}({$encodedOptions}).catch(function(error){
+	document.getElementById('{$id}').innerText = error.message;
 	document.{$this->getJsPrefix()}Error = error;
-});";
+});
+JAVASCRIPT;
 		}
 		// effective interest from selected plan
 		// amount & currency & orderDate from order context

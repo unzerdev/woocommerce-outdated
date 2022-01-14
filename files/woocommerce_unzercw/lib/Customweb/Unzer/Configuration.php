@@ -46,7 +46,7 @@ class Customweb_Unzer_Configuration {
 		), array(
 			"v1",
 			$path
-		), "https://api.heidelpay.com/{version}/{path}");
+		), "https://api.unzer.com/{version}/{path}");
 	}
 
 	public function getPublicKey(){

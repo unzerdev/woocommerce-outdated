@@ -32,7 +32,8 @@ class Customweb_Unzer_Method_CreditCard extends Customweb_Unzer_Method_Default {
 
 	public function getRequiredPlaceholders(){
 		return array(
-			'number' => Customweb_I18n_Translation::__("Card Number"),
+            'holder' => Customweb_I18n_Translation::__("Card Holder Name"),
+            'number' => Customweb_I18n_Translation::__("Card Number"),
 			'expiry' => Customweb_I18n_Translation::__("Expiry Date"),
 			'cvc' => Customweb_I18n_Translation::__("CVC")
 		);
@@ -46,6 +47,9 @@ class Customweb_Unzer_Method_CreditCard extends Customweb_Unzer_Method_Default {
 			}
 		}
 		if (isset($type['method']) && $type['method'] == 'card') {
+            if (isset($type['holder'])) {
+                $transaction->addLabel(Customweb_I18n_Translation::__("Card Holder"), $type['holder']);
+            }
 			if (isset($type['number'])) {
 				$transaction->addLabel(Customweb_I18n_Translation::__("Card Number"), $type['number']);
 			}

@@ -24,7 +24,7 @@ require_once 'Customweb/Unzer/Adapter.php';
 
 
 /**
- * Used to process responses from the heidelpay API.
+ * Used to process responses from the unzer API.
  * Basic implementation of status code checking and error extraction.
  *
  * @author Sebastian Bossert

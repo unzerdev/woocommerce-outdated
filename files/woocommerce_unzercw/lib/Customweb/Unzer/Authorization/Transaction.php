@@ -584,7 +584,7 @@ class Customweb_Unzer_Authorization_Transaction extends Customweb_Payment_Author
 	}
 
 	public function isRefundPossible(){
-		return $this->getRefundSupported() && parent::isRefundPossible() && $this->hasBlockingCapture();
+		return $this->getRefundSupported() && parent::isRefundPossible() && !$this->hasBlockingCapture();
 	}
 
 	private function hasBlockingCapture(){
@@ -595,11 +595,11 @@ class Customweb_Unzer_Authorization_Transaction extends Customweb_Payment_Author
 			 */
 			foreach ($this->getCaptures() as $capture) {
 				if ($capture->getStatus() === Customweb_Payment_Authorization_ITransactionCapture::STATUS_PENDING) {
-					return false;
+					return true;
 				}
 			}
 		}
-		return true;
+		return false;
 	}
 
 	public function isCancelPossible(){
@@ -629,7 +629,8 @@ class Customweb_Unzer_Authorization_Transaction extends Customweb_Payment_Author
 	private $charges = array();
 
 	/**
-	 * Add or update a charge. Returns true if added, false if updated.
+	 * Add or update a charge.
+	 * Returns true if added, false if updated.
 	 *
 	 * @param array $charge
 	 */
@@ -660,6 +661,9 @@ class Customweb_Unzer_Authorization_Transaction extends Customweb_Payment_Author
 	}
 
 	public function getCapturedAmount(){
+		if ($this->getCancelPendingChargeSupported()) {
+			return parent::getCapturedAmount();
+		}
 		$amount = 0;
 		$processed = array();
 		/**

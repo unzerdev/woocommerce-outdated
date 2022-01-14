@@ -45,7 +45,7 @@ class Customweb_Unzer_Communication_Webhook_RetrieveRequestBuilder extends Custo
 			throw new Exception("No retrieveUrl set.");
 		}
 		if($this->isValidRetrieveUrl($container, $webhookData['retrieveUrl'])){
-			throw new Exception("RetrieveUrl does not seem to be a heidelpay URL, please contact support.");
+			throw new Exception("RetrieveUrl does not seem to be a unzer URL, please contact support.");
 		}
 		$this->retrieveUrl = $webhookData['retrieveUrl'];
 		if(!isset($webhookData['publicKey'])) {

@@ -20,21 +20,29 @@
  */
 
 require_once 'Customweb/Unzer/Communication/Processor/DefaultProcessor.php';
-require_once 'Customweb/Unzer/Communication/Processor/OptimisticLockingProcessor.php';
-require_once 'Customweb/Unzer/Communication/Operation/Charge/ResponseProcessor.php';
-require_once 'Customweb/Unzer/Communication/Operation/Charge/RequestBuilder.php';
+require_once 'Customweb/Unzer/Communication/Processor/ManualDirectChargeProcessor.php';
+require_once 'Customweb/Unzer/Communication/Operation/PaymentProcessor.php';
 
 
 /**
- * Processor to process manual charge request after authorization
+ * Processor to process authorize request followed immediately by a charge request (for instalments)
+ *
  * @author sebastian
  *
  */
-class Customweb_Unzer_Communication_Processor_ManualDirectChargeProcessor extends Customweb_Unzer_Communication_Processor_OptimisticLockingProcessor {
+class Customweb_Unzer_Communication_Processor_InstallmentProcessor extends Customweb_Unzer_Communication_Operation_PaymentProcessor {
 
-	public function __construct(Customweb_Unzer_Authorization_Transaction $transaction, Customweb_DependencyInjection_IContainer $container) {
-		$requestBuilder = new Customweb_Unzer_Communication_Operation_Charge_RequestBuilder($transaction->getAuthorizationAmount(), $transaction, $container);
-		parent::__construct($transaction->getExternalTransactionId(), $requestBuilder, $container);
+	public function process(){
+		$result = parent::process();
+		if($this->getTransaction()->isAuthorized()) {
+			$processor = new Customweb_Unzer_Communication_Processor_ManualDirectChargeProcessor($this->getTransaction(), $this->getContainer());
+			$result = $processor->process();
+			$this->getLogger()->logDebug("Processed charge for {$this->getTransaction()->getUnzChargeId()}");
+			return $result;
+		}
+		else {
+			return $result;
+		}
 	}
 
 	/**
@@ -44,7 +52,6 @@ class Customweb_Unzer_Communication_Processor_ManualDirectChargeProcessor extend
 	 * @see Customweb_Unzer_Communication_Processor_DefaultProcessor::getResponseProcessor()
 	 */
 	protected function getResponseProcessor(){
-		$transaction = $this->getTransaction();
-		return new Customweb_Unzer_Communication_Operation_Charge_ResponseProcessor($transaction, $transaction->getUncapturedLineItems(), true, $this->getContainer());
+		return $this->getContainer()->getPaymentMethodByTransaction($this->getTransaction())->getPaymentResponseProcessor($this->getTransaction());
 	}
 }
