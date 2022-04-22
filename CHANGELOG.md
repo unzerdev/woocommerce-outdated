@@ -3,6 +3,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [1.0.93](https://github.com/unzerdev/woocommerce/compare/1.0.85..1.0.93)
+
+### Fixed
+ * Add warning on documentation about manual booking for Unzer secured invoices.
+ * Fix for WPML support.
+
+### Changed
+ * Update Unzer certificate.
+ * Added PHP version compatibility text to Sellxed docs.
+ * Improved screening of error messages, do not display details to end users.
+ * Remove subscription entries from documentations.
+ * Updated Klarna Logos.
+ * Added EtiId for Klarna payments.
+
 ## [1.0.85](https://github.com/unzerdev/woocommerce/compare/1.0.56..1.0.85)
 
 ### Fixed
