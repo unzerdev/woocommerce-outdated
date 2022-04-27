@@ -15,7 +15,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) a
  * Improved screening of error messages, do not display details to end users.
  * Remove subscription entries from documentations.
  * Updated Klarna Logos.
- * Added EtiId for Klarna payments.
 
 ## [1.0.85](https://github.com/unzerdev/woocommerce/compare/1.0.56..1.0.85)
 
