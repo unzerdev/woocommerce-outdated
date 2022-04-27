@@ -41,6 +41,12 @@ class Customweb_Unzer_Authorization_Ajax_AuthorizationAdapter extends Customweb_
 			return $this->getPaymentMethodOC($orderContext)->getVisibleFormFields($orderContext, $aliasTransaction, $failedTransaction,
 					$paymentCustomerContext);
 		}
+		catch (Customweb_Payment_Exception_PaymentErrorException $e) {
+			$this->getLogger()->logError(__METHOD__ . ' failed with message: ' . $e->getErrorMessage()->getBackendMessage());
+			return array(
+				Customweb_Unzer_Util_Form::getStopElement($e->getErrorMessage()->getUserMessage())
+			);
+		}
 		catch (Exception $e) {
 			return array(
 				Customweb_Unzer_Util_Form::getStopElement($e->getMessage())

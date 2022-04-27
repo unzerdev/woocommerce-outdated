@@ -29,11 +29,11 @@ require_once 'Customweb/Payment/BackendOperation/Form/AbstractAbout.php';
 class Customweb_Unzer_BackendOperation_Form_About extends Customweb_Payment_BackendOperation_Form_AbstractAbout {
 
 	protected function getVersion(){
-		return '1.0.85';
+		return '1.0.93';
 	}
 
 	protected function getReleaseDate(){
-		return 'Tue, 07 Dec 2021 09:12:59 +0100';
+		return 'Mon, 14 Mar 2022 14:31:34 +0100';
 	}
 
 	protected function getOrderNumber(){
